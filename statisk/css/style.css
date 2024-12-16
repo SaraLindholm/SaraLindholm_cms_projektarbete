@@ -1,11 +1,12 @@
-/* margin:0;
-padding: 0; */
 
-body {
+
+html, body {
+  height: 100%;
+  margin: 0;
   background-color: #eb9c5c;
-
 }
-h1, h2, h3, h4, h5, h6, a {
+
+h2, h3, h4, h5, h6, a {
   font-family: 'Playfair Display', serif;
 }
 
@@ -52,20 +53,20 @@ h1, h2, h3, h4, h5, h6, a {
 .btn {
   font-weight: bold;
   margin: 5px;
-  padding: 5px 10px; /* Lägg till lite padding för bättre utseende */
+  padding: 5px 10px;
+  color: black;
   text-align: center;
   display: inline-block;
 }
 
 .projekt-btn {
   background-color: #eb9c5c;
-  color: black; /* Gör texten vit på Projekt-knappen */
 }
 
 /* Specifik stil för LinkedIn-knappen */
 .linkedin-btn {
   border: solid black 2px;
-  color: black; /* Texten blir svart på LinkedIn-knappen */
+
 }
 
 /* style för projektsida */
@@ -103,13 +104,52 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
 #footer{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  background-color: aquamarine;
+   min-height: 200px;
+  position: relative;
+  bottom: 0;
+  background: #eb9c5c;
+  overflow: visible;
+}
+#footer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150%; /* Höjden på vågen relativt footern */
+  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffff" fill-opacity="1" d="M0,64L26.7,106.7C53.3,149,107,235,160,277.3C213.3,320,267,320,320,277.3C373.3,235,427,149,480,128C533.3,107,587,149,640,176C693.3,203,747,213,800,197.3C853.3,181,907,139,960,138.7C1013.3,139,1067,181,1120,176C1173.3,171,1227,117,1280,122.7C1333.3,128,1387,192,1413,224L1440,256L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"></path></svg>')
+    no-repeat;
+  background-size: cover;
+}
+
+#footer li{
+  list-style: none;
+  padding: 10px;
+}
+
+#footer ul{
+  padding-left: 0;
+}
+
+#footer a{
+  color: black;
+  size: 2rem;
 }
 #footer .bottom {
-  color: #777;
-  font-size: 12px;
+  font-size: 1.3rem;
   text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+#footer .contact {
+  height: 150px;
+  width: 100% !important;
+  display: flex;
+ justify-content: center;
 }
 
 /* Vector vave. får dej att fungera
