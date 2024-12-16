@@ -3,6 +3,10 @@ padding: 0; */
 
 body {
   background-color: #eb9c5c;
+
+}
+h1, h2, h3, h4, h5, h6, a {
+  font-family: 'Playfair Display', serif;
 }
 
 .navbar-nav .nav-link {
@@ -20,6 +24,31 @@ body {
   justify-content: space-between; /* Ger utrymme mellan innehållet */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/
 }
+
+.container-projekt-index {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-left: auto; /* Centrerar horisontellt */
+  margin-right: auto;
+  padding-top: 10px;
+  width: 80%;
+  height: fit-content;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  align-items: center; /* Vertikal centrering av innehållet */
+  justify-content: center; /* Ger utrymme mellan innehållet */
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/
+}
+.container-projekt-index .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/
+}
+.container-projekt-index .card h5{
+  font-weight: bold;
+}
+
+
 
 .container h5{
   color: #eb9c5c;
@@ -49,7 +78,7 @@ body {
 .btn {
   font-weight: bold;
   margin: 5px;
-  padding: 10px 20px; /* Lägg till lite padding för bättre utseende */
+  padding: 5px 10px; /* Lägg till lite padding för bättre utseende */
   text-align: center;
   display: inline-block;
 }
