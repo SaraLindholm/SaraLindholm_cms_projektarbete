@@ -1,0 +1,7 @@
+body {
+  background-color: #eb9c5c;
+}
+
+.navbar-nav .nav-link {
+  padding: 0 15px; /* Lägger till mellanrum mellan länkar */
+}
