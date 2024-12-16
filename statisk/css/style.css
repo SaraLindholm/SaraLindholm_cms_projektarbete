@@ -1,7 +1,90 @@
+/* margin:0;
+padding: 0; */
+
 body {
   background-color: #eb9c5c;
 }
 
 .navbar-nav .nav-link {
   padding: 0 15px; /* Lägger till mellanrum mellan länkar */
+}
+
+.container {
+  display: flex;
+  margin-top: 50px;
+  width: 100%;
+  height: fit-content;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  align-items: center; /* Vertikal centrering av innehållet */
+  justify-content: space-between; /* Ger utrymme mellan innehållet */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/
+}
+
+.container h5{
+  color: #eb9c5c;
+  font-weight: bold;
+}
+
+.info {
+  min-height: 300px;
+
+}
+
+.image {
+  display: flex; /* Centrerar bilden inuti sektionen */
+  justify-content: flex-end; /* Flyttar bilden till höger */
+}
+
+.image img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 80%; /* Gör att bilden inte blir större än sektionen */
+  height: auto; /* Behåller proportionerna */
+  border-radius: 50%; /* rundad bild */
+}
+
+
+
+.btn {
+  font-weight: bold;
+  margin: 5px;
+  padding: 10px 20px; /* Lägg till lite padding för bättre utseende */
+  text-align: center;
+  display: inline-block;
+}
+
+.projekt-btn {
+  background-color: #eb9c5c;
+  color: black; /* Gör texten vit på Projekt-knappen */
+}
+
+/* Specifik stil för LinkedIn-knappen */
+.linkedin-btn {
+  border: solid black 2px;
+  color: black; /* Texten blir svart på LinkedIn-knappen */
+}
+
+
+/* Vector vave. får dej att fungera
+.vave {
+  position: absolute;
+  width: 777px;
+  height: 877px;
+  right: -57px;
+  bottom: 0px;
+
+  background: #eb9c5c;
+  z-index: 0;
+} */
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Gör layouten vertikal */
+    align-items: center; /* Centrerar allt */
+  }
+
+  .image {
+    justify-content: center; /* Centrerar bilden */
+  }
 }
