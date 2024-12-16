@@ -69,6 +69,33 @@ h2, h3, h4, h5, h6, a {
 
 }
 
+.container-projekt-single {
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-left: auto; /* Centrerar horisontellt */
+  margin-right: auto;
+  padding-top: 10px;
+  width: 80%;
+  height: fit-content;
+  border-radius: 5px;
+  align-items: center; /* Vertikal centrering av innehållet */
+  justify-content: center;
+}
+
+.container-projekt-single .card{
+  background-color: aquamarine;
+  border: none;
+}
+.container-projekt-single .card-body{
+
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 /* style för projektsida */
 
 .container-projekt-index {
