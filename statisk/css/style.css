@@ -12,6 +12,7 @@ h1, h2, h3, h4, h5, h6, a {
 .navbar-nav .nav-link {
   padding: 0 15px; /* Lägger till mellanrum mellan länkar */
 }
+/* style för startsida */
 
 .container {
   display: flex;
@@ -24,31 +25,6 @@ h1, h2, h3, h4, h5, h6, a {
   justify-content: space-between; /* Ger utrymme mellan innehållet */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/
 }
-
-.container-projekt-index {
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  margin-left: auto; /* Centrerar horisontellt */
-  margin-right: auto;
-  padding-top: 10px;
-  width: 80%;
-  height: fit-content;
-  border-radius: 5px;
-  background-color: #f8f9fa;
-  align-items: center; /* Vertikal centrering av innehållet */
-  justify-content: center; /* Ger utrymme mellan innehållet */
-
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/
-}
-.container-projekt-index .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/
-}
-.container-projekt-index .card h5{
-  font-weight: bold;
-}
-
-
 
 .container h5{
   color: #eb9c5c;
@@ -73,8 +49,6 @@ h1, h2, h3, h4, h5, h6, a {
   border-radius: 50%; /* rundad bild */
 }
 
-
-
 .btn {
   font-weight: bold;
   margin: 5px;
@@ -94,6 +68,49 @@ h1, h2, h3, h4, h5, h6, a {
   color: black; /* Texten blir svart på LinkedIn-knappen */
 }
 
+/* style för projektsida */
+
+.container-projekt-index {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-left: auto; /* Centrerar horisontellt */
+  margin-right: auto;
+  padding-top: 10px;
+  width: 80%;
+  height: fit-content;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  align-items: center; /* Vertikal centrering av innehållet */
+  justify-content: center; /* Ger utrymme mellan innehållet */
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/
+}
+.container-projekt-index h2{
+  margin-top: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+.solid{
+  width: 60%;
+  color: #eb9c5c;
+}
+
+.container-projekt-index .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/
+}
+.container-projekt-index .card h5{
+  font-weight: bold;
+}
+
+#footer{
+  width: 100%;
+  background-color: aquamarine;
+}
+#footer .bottom {
+  color: #777;
+  font-size: 12px;
+  text-align: center;
+}
 
 /* Vector vave. får dej att fungera
 .vave {
