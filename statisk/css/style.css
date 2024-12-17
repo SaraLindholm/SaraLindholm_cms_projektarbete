@@ -84,18 +84,41 @@ h2, h3, h4, h5, h6, a {
   justify-content: center;
 }
 
+.container-projekt-single .btn{
+  border: solid black 2px;
+
+
+
+}
+
 .container-projekt-single .card{
-  background-color: aquamarine;
+  width: 80%;
   border: none;
 }
-.container-projekt-single .card-body{
 
-  background-color: blue;
+.card-body{
+  background-color: white;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-self: center;
 }
+.single-image{
+  display:flex;
+  flex-wrap: wrap;
+  max-width: 60%;
+  margin: 0 auto; /* Centrerar blocket horisontellt */
+  gap: 10px; }
+
+  .single-image img{
+    flex: 0 0 calc(50% - 10px); /* 50% bredd, minus gap för mellanrum */
+  max-width: calc(50% - 10px); /* Säkerställ att bilderna inte överskrider bredden */
+  height: auto;
+  margin-bottom: 20px;
+  }
+
+
 /* style för projektsida */
 
 .container-projekt-index {
@@ -119,8 +142,9 @@ h2, h3, h4, h5, h6, a {
   margin-bottom: 1.2rem;
 }
 .solid{
-  width: 60%;
-  color: #eb9c5c;
+  width: 30%;
+  border-top: 5px solid #eb9c5c; /* Tjockare linje med färg */
+  margin: 10px auto; /* Centrerar horisontellt */
 }
 
 .container-projekt-index .card {
