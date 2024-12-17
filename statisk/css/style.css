@@ -13,7 +13,7 @@ h2, h3, h4, h5, h6, a {
 .navbar-nav .nav-link {
   padding: 0 15px; /* Lägger till mellanrum mellan länkar */
 }
-/* style för startsida */
+/* style för startsida-------------------- */
 
 .container {
   display: flex;
@@ -24,7 +24,7 @@ h2, h3, h4, h5, h6, a {
   background-color: #f8f9fa;
   align-items: center; /* Vertikal centrering av innehållet */
   justify-content: space-between; /* Ger utrymme mellan innehållet */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .container h5{
@@ -84,6 +84,7 @@ h2, h3, h4, h5, h6, a {
   border-radius: 5px;
   align-items: center; /* Vertikal centrering av innehållet */
   justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .container-projekt-single .btn{
@@ -135,10 +136,11 @@ h2, h3, h4, h5, h6, a {
     border-radius: 5px;
     align-items: center; /* Vertikal centrering av innehållet */
     justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   .cardd {
     max-width: 100%; /* Gör att kortet fyller hela bredden */
-    width: 80%;
+    width: 70%;
     margin: 0;
     padding: 0 ;
   }
@@ -153,7 +155,8 @@ h2, h3, h4, h5, h6, a {
 
   }
   #card-om-mig-text{
-margin-bottom: 20px;
+padding:20px;
+/* width: 60%; */
   }
 
 
@@ -172,7 +175,6 @@ margin-bottom: 20px;
   background-color: #f8f9fa;
   align-items: center; /* Vertikal centrering av innehållet */
   justify-content: center; /* Ger utrymme mellan innehållet */
-
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);/
 }
 .container-projekt-index h2{
@@ -183,6 +185,7 @@ margin-bottom: 20px;
   width: 30%;
   border-top: 5px solid #eb9c5c; /* Tjockare linje med färg */
   margin: 10px auto; /* Centrerar horisontellt */
+  margin-bottom: 20px;
 }
 
 .container-projekt-index .card {
@@ -191,6 +194,63 @@ margin-bottom: 20px;
 .container-projekt-index .card h5{
   font-weight: bold;
 }
+
+/* style för kontakt------------------------*/
+
+#container-contact {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  width: 70%;
+  height: fit-content;
+  border-radius: 5px;
+  margin-left: auto; /* Centrerar horisontellt */
+  margin-right: auto;
+  background-color: #f8f9fa;
+  align-items: center; /* Vertikal centrering av innehållet */
+  justify-content: space-between; /* Ger utrymme mellan innehållet */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#container-contact h2{
+  padding: 20px
+}
+.info-contact{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+#text-contact{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.image-contact img {
+
+  padding: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  max-width: 50%; /* Gör att bilden inte blir större än sektionen */
+  height: auto; /* Behåller proportionerna */
+  border: 15px solid #eb9c5c; /* Inre ram */
+  outline: 5px solid #e27a4a; /* Yttre ram */
+  border-radius: 40% 60% 80% 50%; /* Olika hörn */
+  outline-offset: 5px; /* Mellanrum mellan ramarna */
+
+
+}
+
+.image-contact {
+
+  max-width: 50%;
+}
+
+
+
+
 /* style footern------------------------------------------ */
 #footer{
   margin-top: 50px;
@@ -241,16 +301,11 @@ margin-bottom: 20px;
  justify-content: center;
 }
 
-/* Vector vave. får dej att fungera
-.vave {
-  position: absolute;
-  width: 777px;
-  height: 877px;
-  right: -57px;
-  bottom: 0px;
 
-  background: #eb9c5c;
-  z-index: 0;
+/* @media (max-width: 450px) {
+  card-om-mig-text{
+    width:60%
+  }
 } */
 
 @media (max-width: 768px) {
@@ -262,4 +317,5 @@ margin-bottom: 20px;
   .image {
     justify-content: center; /* Centrerar bilden */
   }
+
 }
