@@ -69,6 +69,8 @@ h2, h3, h4, h5, h6, a {
 
 }
 
+/* styling single projekt ------------------------*/
+
 .container-projekt-single {
   background-color: #f8f9fa;
   display: flex;
@@ -87,9 +89,6 @@ h2, h3, h4, h5, h6, a {
 .container-projekt-single .btn{
   border: solid black 2px;
   margin-bottom: 30px;
-
-
-
 }
 
 .container-projekt-single .card{
@@ -99,6 +98,8 @@ h2, h3, h4, h5, h6, a {
 
 .card-body{
   background-color: white;
+  padding:10px;
+  margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -109,18 +110,54 @@ h2, h3, h4, h5, h6, a {
   display:flex;
   flex-wrap: wrap;
   max-width: 60%;
-  margin: 0 auto; /* Centrerar blocket horisontellt */
+  margin: 0 auto;
   gap: 10px; }
 
   .single-image img{
-    flex: 0 0 calc(50% - 10px); /* 50% bredd, minus gap för mellanrum */
-  max-width: calc(50% - 10px); /* Säkerställ att bilderna inte överskrider bredden */
+    flex: 0 0 calc(50% - 10px);
+  max-width: calc(50% - 10px);
   height: auto;
   margin-bottom: 20px;
   }
 
+  /* style om mig---------------------------  */
 
-/* style för projektsida */
+  .container-om-mig {
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: auto; /* Centrerar horisontellt */
+    margin-right: auto;
+    padding-top: 30px;
+    width: 80%;
+    height: fit-content;
+    border-radius: 5px;
+    align-items: center; /* Vertikal centrering av innehållet */
+    justify-content: center;
+  }
+  .cardd {
+    max-width: 100%; /* Gör att kortet fyller hela bredden */
+    width: 80%;
+    margin: 0;
+    padding: 0 ;
+  }
+
+  .card-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+  }
+  #card-om-mig-text{
+margin-bottom: 20px;
+  }
+
+
+/* style för projektsida --------------------------*/
 
 .container-projekt-index {
   display: flex;
@@ -154,7 +191,7 @@ h2, h3, h4, h5, h6, a {
 .container-projekt-index .card h5{
   font-weight: bold;
 }
-
+/* style footern------------------------------------------ */
 #footer{
   margin-top: 50px;
   display: flex;
