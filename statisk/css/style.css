@@ -228,19 +228,16 @@ padding:20px;
 }
 
 .image-contact img {
-
   padding: 10px;
   margin-left: 20px;
   margin-top: 20px;
   margin-bottom: 10px;
-  max-width: 50%; /* Gör att bilden inte blir större än sektionen */
+  max-width: 70%; /* Gör att bilden inte blir större än sektionen */
   height: auto; /* Behåller proportionerna */
   border: 15px solid #eb9c5c; /* Inre ram */
   outline: 5px solid #e27a4a; /* Yttre ram */
   border-radius: 40% 60% 80% 50%; /* Olika hörn */
   outline-offset: 5px; /* Mellanrum mellan ramarna */
-
-
 }
 
 .image-contact {
@@ -317,5 +314,18 @@ padding:20px;
   .image {
     justify-content: center; /* Centrerar bilden */
   }
+  .image-contact img {
+    padding: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    max-width: 50%; /* Gör att bilden inte blir större än sektionen */
+    height: auto; /* Behåller proportionerna */
+    border: 15px solid #eb9c5c; /* Inre ram */
+    outline: 5px solid #e27a4a; /* Yttre ram */
+    border-radius: 40% 60% 80% 50%; /* Olika hörn */
+    outline-offset: 5px; /* Mellanrum mellan ramarna */
+  }
+
 
 }
