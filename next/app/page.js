@@ -1,95 +1,65 @@
 import Image from "next/image";
+
 import styles from "./page.module.css";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      <Navbar />
+      <div className="container">
+        <div className="info">
+          <h5>FRONTEND-UTVECKLARE</h5>
+          <h1>
+            Hej, välkommen
+            <br />
+            till min
+            <br />
+            portfolio
+          </h1>
+          <p>
+            Jag är Sara, en frontend-utvecklare med ett intresse att bygga
+            webbplatser och skapa bra användarupplevelser. Här på min portfolio
+            kan du kika på några av de projekt jag har jobbat med under min
+            utbildningen. Jag kommer fylla på allt eftersom jag skapar nya
+            projekt. Om du är intresserad av att samarbeta eller bara vill prata
+            kod, tveka inte att höra av dig!
+          </p>
+          {/* <Link href="/projects" className="btn projekt-btn">
+            Projekt
+          </Link> */}
+          {/* <a
+            className="btn linkedin-btn"
+            type="button"
+            href="https://www.linkedin.com/in/sara-lindholm-169771171/"
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+            LinkedIn
+          </a> */}
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div className="image">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/img/sara.jpg"
+            alt="bild på sara"
+            width={500}
+            height={500}
           />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+      </div>
+      <Footer />
+      {/*
+    ´<script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz4fnFO9gyb4LvFwLNAnrflxRZ6Oa7u4Jy+Rr3KbtCQlrz1sy2QbK41zjG"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-0L0pkqgDe3a+v5Yb7Bl8Tv9Z8Xk5Q4nC1C6Zjyy9EvrmQXhxV1N85CHKnLDrb3kc"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="js/script.js"></script>´ */}
+    </>
   );
 }
