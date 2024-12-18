@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import Link from "next/link";
 
 export default function contact() {
   return (
@@ -14,7 +15,7 @@ export default function contact() {
           <div className="info-contact">
             <div className="image-contact">
               <Image
-                src="img/sara.jpg"
+                src="/img/sara.jpg"
                 alt="bild på mig"
                 width={500}
                 height={500}
@@ -27,9 +28,9 @@ export default function contact() {
               </h5>
               <ul className="contact">
                 <li>
-                  <a href="#">
+                  <Link href="#">
                     <i className="fa-brands fa-github fa-2x"></i>
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="https://www.linkedin.com/in/sara-lindholm-169771171/">
@@ -37,9 +38,9 @@ export default function contact() {
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <Link href="#">
                     <i className="fa-solid fa-envelope fa-2x"></i>
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <p>
@@ -48,13 +49,13 @@ export default function contact() {
             </div>
           </div>
           - bild - kontaktuppgifter (ex, mail, github, sociala medier)
-          <a
+          <Link
             className="btn linkedin-btn"
             type="button"
             href="https://www.linkedin.com/in/sara-lindholm-169771171/"
           >
             Ta mig tillbaka till projekten
-          </a>
+          </Link>
         </div>
       </main>
       <Footer />

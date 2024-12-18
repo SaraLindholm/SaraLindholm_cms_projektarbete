@@ -38,7 +38,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="col-md-4">
-                <img
+                <Image
                   src="img/bild3.png"
                   className="img-fluid rounded-start"
                   alt="..."
@@ -71,7 +71,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="col-md-4">
-                <img
+                <Image
                   src="img/bild2.png"
                   className="img-fluid rounded-start"
                   alt="..."

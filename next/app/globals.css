@@ -1,13 +1,27 @@
-
-
-html, body, main {
-  height: 100%;
+* {
   margin: 0;
+  padding: 0;
+}
+
+/* @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"); */
+
+html,
+body {
+  height: 100%;
+}
+body,
+main,
+html {
   background-color: #eb9c5c;
 }
 
-h2, h3, h4, h5, h6, a {
-  font-family: 'Playfair Display', serif;
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  font-family: "Playfair Display", serif;
 }
 
 .navbar-nav .nav-link {
@@ -27,14 +41,13 @@ h2, h3, h4, h5, h6, a {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.container h5{
+.container h5 {
   color: #eb9c5c;
   font-weight: bold;
 }
 
 .info {
   min-height: 300px;
-
 }
 
 .image {
@@ -66,7 +79,6 @@ h2, h3, h4, h5, h6, a {
 /* Specifik stil för LinkedIn-knappen */
 .linkedin-btn {
   border: solid black 2px;
-
 }
 
 /* styling single projekt ------------------------*/
@@ -87,19 +99,19 @@ h2, h3, h4, h5, h6, a {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.container-projekt-single .btn{
+.container-projekt-single .btn {
   border: solid black 2px;
   margin-bottom: 30px;
 }
 
-.container-projekt-single .card{
+.container-projekt-single .card {
   width: 80%;
   border: none;
 }
 
-.card-body{
+.card-body {
   background-color: white;
-  padding:10px;
+  padding: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
@@ -107,58 +119,56 @@ h2, h3, h4, h5, h6, a {
   align-items: center;
   justify-self: center;
 }
-.single-image{
-  display:flex;
+.single-image {
+  display: flex;
   flex-wrap: wrap;
   max-width: 60%;
   margin: 0 auto;
-  gap: 10px; }
+  gap: 10px;
+}
 
-  .single-image img{
-    flex: 0 0 calc(50% - 10px);
+.single-image img {
+  flex: 0 0 calc(50% - 10px);
   max-width: calc(50% - 10px);
   height: auto;
   margin-bottom: 20px;
-  }
+}
 
-  /* style om mig---------------------------  */
+/* style om mig---------------------------  */
 
-  .container-om-mig {
-    background-color: #f8f9fa;
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-    margin-left: auto; /* Centrerar horisontellt */
-    margin-right: auto;
-    padding-top: 30px;
-    width: 80%;
-    height: fit-content;
-    border-radius: 5px;
-    align-items: center; /* Vertikal centrering av innehållet */
-    justify-content: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  .cardd {
-    max-width: 100%; /* Gör att kortet fyller hela bredden */
-    width: 70%;
-    margin: 0;
-    padding: 0 ;
-  }
+.container-om-mig {
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-left: auto; /* Centrerar horisontellt */
+  margin-right: auto;
+  padding-top: 30px;
+  width: 80%;
+  height: fit-content;
+  border-radius: 5px;
+  align-items: center; /* Vertikal centrering av innehållet */
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.cardd {
+  max-width: 100%; /* Gör att kortet fyller hela bredden */
+  width: 70%;
+  margin: 0;
+  padding: 0;
+}
 
-  .card-container{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-
-  }
-  #card-om-mig-text{
-padding:20px;
-
-  }
-
+.card-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+#card-om-mig-text {
+  padding: 20px;
+}
 
 /* style för projektsida --------------------------*/
 
@@ -178,12 +188,12 @@ padding:20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.container-projekt-index h2{
+.container-projekt-index h2 {
   margin-top: 1.5rem;
   margin-bottom: 1.2rem;
 }
 
-.solid{
+.solid {
   width: 30%;
   border-top: 5px solid #eb9c5c; /* Tjockare linje med färg */
   margin: 10px auto; /* Centrerar horisontellt */
@@ -193,7 +203,7 @@ padding:20px;
 .container-projekt-index .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.container-projekt-index .card h5{
+.container-projekt-index .card h5 {
   font-weight: bold;
 }
 
@@ -213,17 +223,17 @@ padding:20px;
   justify-content: space-between; /* Ger utrymme mellan innehållet */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-#container-contact h2{
-  padding: 20px
+#container-contact h2 {
+  padding: 20px;
 }
-.info-contact{
+.info-contact {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
-#text-contact{
+#text-contact {
   display: flex;
   flex-direction: column;
   width: 60%;
@@ -243,20 +253,16 @@ padding:20px;
 }
 
 .image-contact {
-
   max-width: 50%;
 }
 
-
-
-
 /* style footern------------------------------------------ */
-#footer{
+#footer {
   margin-top: 50px;
   display: flex;
   flex-direction: column;
   width: 100%;
-   min-height: 200px;
+  min-height: 200px;
   position: relative;
   bottom: 0;
   background: #eb9c5c;
@@ -274,16 +280,16 @@ padding:20px;
   background-size: cover;
 }
 
-#footer li{
+#footer li {
   list-style: none;
   padding: 10px;
 }
 
-#footer ul{
+#footer ul {
   padding-left: 0;
 }
 
-#footer a{
+#footer a {
   color: black;
   size: 2rem;
 }
@@ -297,9 +303,8 @@ padding:20px;
   height: 150px;
   width: 100% !important;
   display: flex;
- justify-content: center;
+  justify-content: center;
 }
-
 
 /* @media (max-width: 450px) {
   card-om-mig-text{
@@ -328,6 +333,4 @@ padding:20px;
     border-radius: 40% 60% 80% 50%; /* Olika hörn */
     outline-offset: 5px; /* Mellanrum mellan ramarna */
   }
-
-
 }
