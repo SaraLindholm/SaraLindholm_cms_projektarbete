@@ -1,19 +1,19 @@
-// import { useRouter } from 'next/router';
-
 import Image from "next/image";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import Link from "next/link";
 
-export default function Home() {
+export default function Projects() {
   return (
     <>
       <Navbar />
       <main>
+
         <div className="container-projekt-index">
           <h2>Projekt</h2>
           <hr className="solid" />
 
-          <div className="card mb-3" style="max-width: 60%">
+          <div className="card mb-3" style={{ maxWidth: "60%" }}>
             <div className="row g-0">
               <div className="col-md-8">
                 <div className="card-body">
@@ -27,26 +27,23 @@ export default function Home() {
                       Här lägger vi taggarna/kategorierna
                     </small>
                   </p>
-                  <a
-                    className="btn linkedin-btn"
-                    btn
-                    type="button"
-                    href="projekt-single.html"
-                  >
+                  <Link className="btn linkedin-btn" href="/project[slug]">
                     Till projektet
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-md-4">
                 <Image
-                  src="img/bild3.png"
+                  src="/img/bild3.png"
                   className="img-fluid rounded-start"
                   alt="..."
+                  width={500}
+                  height={500}
                 />
               </div>
             </div>
           </div>
-          <div className="card mb-3" style="max-width: 60%">
+          <div className="card mb-3" style={{ maxWidth: "60%" }}>
             <div className="row g-0">
               <div className="col-md-8">
                 <div className="card-body">
@@ -60,26 +57,23 @@ export default function Home() {
                       Här lägger vi taggarna/kategorierna
                     </small>
                   </p>
-                  <a
-                    className="btn linkedin-btn"
-                    btn
-                    type="button"
-                    href="projekt-single.html"
-                  >
+                  <Link className="btn linkedin-btn" href="/project[slug]">
                     Till projektet
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-md-4">
                 <Image
-                  src="img/bild2.png"
+                  src="/img/bild2.png"
                   className="img-fluid rounded-start"
                   alt="..."
+                  width={500}
+                  height={500}
                 />
               </div>
             </div>
           </div>
-          <div className="card mb-3" style="max-width: 60%">
+          <div className="card mb-3" style={{ maxWidth: "60%" }}>
             <div className="row g-0">
               <div className="col-md-8">
                 <div className="card-body">
@@ -93,19 +87,14 @@ export default function Home() {
                       Här lägger vi taggarna/kategorierna
                     </small>
                   </p>
-                  <a
-                    className="btn linkedin-btn"
-                    btn
-                    type="button"
-                    href="projekt-single.html"
-                  >
+                  <Link className="btn linkedin-btn" href="/project[slug]">
                     Till projektet
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-md-4">
                 <Image
-                  src="img/bild1.png"
+                  src="/img/bild1.png"
                   className="img-fluid rounded-end"
                   alt="..."
                   width={500}

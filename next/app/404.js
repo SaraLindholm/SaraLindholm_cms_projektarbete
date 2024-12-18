@@ -1,12 +1,12 @@
 // import { useRouter } from 'next/router';
-
-export default function Home() {
+// app/404.js
+export default function NotFound() {
   return (
     <>
-      <main>
-        <div>404</div>
-      </main>
-      <footer>footer</footer>
+  <div>
+      <h1>404 - Sidan finns inte</h1>
+      <p>Den sidan du letar efter finns inte. Kontrollera URL:en eller gå tillbaka till startsidan.</p>
+    </div>
     </>
   );
 }

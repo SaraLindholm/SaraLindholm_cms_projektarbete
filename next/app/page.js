@@ -26,16 +26,15 @@ export default function Home() {
               skapar nya projekt. Om du är intresserad av att samarbeta eller
               bara vill prata kod, tveka inte att höra av dig!
             </p>
-            {/* <Link href="/projects" className="btn projekt-btn">
-            Projekt
-          </Link> */}
-            {/* <a
-            className="btn linkedin-btn"
-            type="button"
-            href="https://www.linkedin.com/in/sara-lindholm-169771171/"
-          >
-            LinkedIn
-          </a> */}
+            <Link href="/projects" className="btn projekt-btn">
+              Projekt
+            </Link>
+            <Link
+              className="btn linkedin-btn"
+              href="https://www.linkedin.com/in/sara-lindholm-169771171/"
+            >
+              LinkedIn
+            </Link>
           </div>
           <div className="image">
             <Image

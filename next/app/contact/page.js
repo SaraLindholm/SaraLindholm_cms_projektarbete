@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Link from "next/link";
 
-export default function contact() {
+export default function Contact() {
   return (
     <>
       <Navbar />
@@ -48,13 +48,10 @@ export default function contact() {
               </p>
             </div>
           </div>
-          - bild - kontaktuppgifter (ex, mail, github, sociala medier)
-          <Link
-            className="btn linkedin-btn"
-            type="button"
-            href="https://www.linkedin.com/in/sara-lindholm-169771171/"
-          >
-            Ta mig tillbaka till projekten
+          {/* varför får jag inte länken att fungera? */}- bild -
+          kontaktuppgifter (ex, mail, github, sociala medier)
+          <Link href="/./projects" className="btn projekt-btn">
+            Projekt
           </Link>
         </div>
       </main>
