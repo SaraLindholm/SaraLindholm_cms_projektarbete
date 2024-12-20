@@ -1,5 +1,4 @@
-// import { useRouter } from 'next/router';
-// app/404.js
+
 export default function NotFound() {
   return (
     <>
