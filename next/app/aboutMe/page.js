@@ -20,46 +20,34 @@ export default async function About() {
           <h2>{aboutItem[0].title}</h2>
           <div className="cardd mb-3">
             <div className="card-container">
-              <div id="card-om-mig-text">
-                Den 2-åriga utbildningen är utformad efter arbetslivets behov av
-                kvalificerad yrkeskompetens och ger ett helhetsbegrepp om
-                webbutveckling med fokus på HTML, CSS och JavaScript. Under
-                utbildningen lär vi oss att jobba i team i agila struktur
-              </div>
+              <div id="card-om-mig-text">{aboutItem[0].introText}</div>
               <div className="card-body">
-                <h4>Utbildning</h4>
-                <h6>IT-Högskolan</h6>
-                <h6>Frontendutveckling 2023- maj 2025</h6>
+                <h4>{aboutItem[0].underrubrik}</h4>
+                <h6>{aboutItem[0].skola}</h6>
+                <h6>{aboutItem[0].utbildning}</h6>
                 <ul>
-                  <li>
-                    Den 2-åriga utbildningen är utformad efter arbetslivets
-                    behov av kvalificerad yrkeskompetens och ger ett
-                    helhetsbegrepp om webbutveckling med fokus på HTML, CSS och
-                    JavaScript.
-                  </li>
-                  <li>
-                    Under utbildningen lär vi oss att jobba i team i agila
-                    strukturer så som scrum.
-                  </li>
+                  {aboutItem[0].utbList?.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
                 </ul>
-                <h6>Blekinge tekniska högskola</h6>
-                <h6>Fil.kandidat-examen, Psykologi 2015</h6>
+                <h6>{aboutItem[0].skola2}</h6>
+                <h6>{aboutItem[0].utbildning2}</h6>
                 <ul>
-                  <li>
-                    Läser om ledarskap och kommunikation med fokus på ledarskap
-                    och grupper
-                  </li>
+                  {aboutItem[0].utbList2?.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
                 </ul>
-                <h6>Högskolan i Kristianstad</h6>
+                <h6>{aboutItem[0].skola3}</h6>
                 <ul>
-                  <li>Sociologi 30 hp 2010</li>
-                  <li>Psykologi 7.5 hp 2010</li>
+                  {aboutItem[0].utbList3?.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
                 </ul>
                 <h6>Komvux Karlshamn</h6>
                 <h6>Omvårdnadsutbildning, Undersköterska 2008-2009</h6>
               </div>
               <div className="card-body">
-                <h4>Arbetslivserfarenhet</h4>
+                <h4>{aboutItem[0].underrubrik2}</h4>
                 <h6>Utvecklare Predicare</h6>
                 <h6>LIA Aug - Okt 2024</h6>
                 <ul>
@@ -106,15 +94,3 @@ export default async function About() {
     </>
   );
 }
-
-  // underrubrik
-  // skola
-  // utbildning
-  // utbList
-  // skola2
-  // utbildning2
-  // utbList2
-  // skola3
-  // utbildning3
-  // utbList3
-  // underrubrik2

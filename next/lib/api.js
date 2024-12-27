@@ -30,12 +30,13 @@ const ABOUT_GRAPHQL_FIELDS = `
   underrubrik
   skola
   utbildning
-
+   utbList
   skola2
   utbildning2
-
+  utbList2
   skola3
   utbildning3
+  utbList3
 
   underrubrik2
   `;
@@ -113,7 +114,7 @@ export async function getContactItems() {
 export async function getAboutItems() {
   const query = await fetchGraphQL(
     ` query{
-      aboutCollection{
+      omMigCollection{
         items {
           ${ABOUT_GRAPHQL_FIELDS}
         }
@@ -121,5 +122,5 @@ export async function getAboutItems() {
     }`
   );
   console.log("GraphQL Response:", query);
-  return query?.data?.aboutCollection?.items || [];
+  return query?.data?.omMigCollection?.items || [];
 }
