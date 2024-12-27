@@ -1,15 +1,23 @@
 // import { useRouter } from 'next/router';
 
+import { getAboutItems } from "@/lib/api";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { notFound } from "next/navigation";
 
-export default function About() {
+export default async function About() {
+  const aboutItem = await getAboutItems();
+  console.log("aboutItem:", aboutItem);
+
+  if (!aboutItem) {
+    notFound();
+  }
   return (
     <>
       <Navbar />
       <main>
         <div className="container-om-mig">
-          <h2>Sara Lindholm</h2>
+          <h2>{aboutItem[0].title}</h2>
           <div className="cardd mb-3">
             <div className="card-container">
               <div id="card-om-mig-text">
@@ -98,3 +106,15 @@ export default function About() {
     </>
   );
 }
+
+  // underrubrik
+  // skola
+  // utbildning
+  // utbList
+  // skola2
+  // utbildning2
+  // utbList2
+  // skola3
+  // utbildning3
+  // utbList3
+  // underrubrik2

@@ -230,6 +230,10 @@ a {
 #container-contact h2 {
   padding: 20px;
 }
+
+#container-contact a{
+  color: black;
+}
 .info-contact {
   display: flex;
   flex-direction: row;

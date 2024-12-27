@@ -10,7 +10,7 @@ export default async function Contact() {
   const contactItem = await getContactItems();
   console.log(
     "contactItem:",
-    contactItem[0].mainText.json.content[0].content[0].value
+    contactItem[0]
   );
 
   if (!contactItem) {

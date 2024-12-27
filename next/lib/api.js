@@ -23,6 +23,23 @@ const START_GRAPHQL_FIELDS = `
   }
 `;
 
+const ABOUT_GRAPHQL_FIELDS = `
+  title
+  slug
+  introText
+  underrubrik
+  skola
+  utbildning
+
+  skola2
+  utbildning2
+
+  skola3
+  utbildning3
+
+  underrubrik2
+  `;
+
 const CONTACT_GRAPHQL_FIELDS = `
   title
   slug
@@ -91,4 +108,18 @@ export async function getContactItems() {
     }`
   );
   return query?.data?.kontaktCollection?.items || [];
+}
+
+export async function getAboutItems() {
+  const query = await fetchGraphQL(
+    ` query{
+      aboutCollection{
+        items {
+          ${ABOUT_GRAPHQL_FIELDS}
+        }
+      }
+    }`
+  );
+  console.log("GraphQL Response:", query);
+  return query?.data?.aboutCollection?.items || [];
 }
