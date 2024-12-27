@@ -40,6 +40,14 @@ const ABOUT_GRAPHQL_FIELDS = `
 
   underrubrik2
   `;
+const WORK_GRAPHQL_FIELDS = `
+  title
+  slug
+  arbetsroll
+  arbetsgivare
+  tid
+  erfarenhet
+  `;
 
 const CONTACT_GRAPHQL_FIELDS = `
   title
@@ -123,4 +131,18 @@ export async function getAboutItems() {
   );
   console.log("GraphQL Response:", query);
   return query?.data?.omMigCollection?.items || [];
+}
+
+export async function getWorkItems() {
+  const query = await fetchGraphQL(
+    ` query{
+      arbeteCollection{
+        items {
+          ${WORK_GRAPHQL_FIELDS}
+        }
+      }
+    }`
+  );
+  console.log("GraphQL Response:", query);
+  return query?.data?.arbeteCollection?.items || [];
 }
