@@ -26,19 +26,10 @@ const START_GRAPHQL_FIELDS = `
 const ABOUT_GRAPHQL_FIELDS = `
   title
   slug
-  introText
-  underrubrik
   skola
   utbildning
-   utbList
-  skola2
-  utbildning2
-  utbList2
-  skola3
-  utbildning3
-  utbList3
-
-  underrubrik2
+  tid
+  utbList
   `;
 const WORK_GRAPHQL_FIELDS = `
   title
@@ -93,6 +84,7 @@ async function fetchGraphQL(query, preview = false) {
   ).then((response) => response.json());
 }
 
+//startsidan
 export async function getStartpageItems() {
   const query = await fetchGraphQL(
     ` query{
@@ -105,7 +97,7 @@ export async function getStartpageItems() {
   );
   return query?.data?.startsidaCollection?.items || [];
 }
-
+//kontaktsidan
 export async function getContactItems() {
   const query = await fetchGraphQL(
     ` query{
@@ -118,11 +110,11 @@ export async function getContactItems() {
   );
   return query?.data?.kontaktCollection?.items || [];
 }
-
+//utbilding på Om migsidan
 export async function getAboutItems() {
   const query = await fetchGraphQL(
     ` query{
-      omMigCollection{
+      about2Collection{
         items {
           ${ABOUT_GRAPHQL_FIELDS}
         }
@@ -130,9 +122,9 @@ export async function getAboutItems() {
     }`
   );
   console.log("GraphQL Response:", query);
-  return query?.data?.omMigCollection?.items || [];
+  return query?.data?.about2Collection?.items || [];
 }
-
+//Arbetslivserfarenheter på Om migsidan
 export async function getWorkItems() {
   const query = await fetchGraphQL(
     ` query{

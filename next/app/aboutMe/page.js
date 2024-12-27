@@ -19,39 +19,32 @@ export default async function About() {
       <Navbar />
       <main>
         <div className="container-om-mig">
-          <h2>{aboutItem[0].title}</h2>
+          <h2>Sara Lindholm</h2>
           <div className="cardd mb-3">
             <div className="card-container">
-              <div id="card-om-mig-text">{aboutItem[0].introText}</div>
+              <div id="card-om-mig-text">
+                Info-text om mig som kan läggas till senare
+              </div>
               <div className="card-body">
-                <h4>{aboutItem[0].underrubrik}</h4>
-                <h6>{aboutItem[0].skola}</h6>
-                <h6>{aboutItem[0].utbildning}</h6>
-                <ul>
-                  {aboutItem[0].utbList?.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-                <h6>{aboutItem[0].skola2}</h6>
-                <h6>{aboutItem[0].utbildning2}</h6>
-                <ul>
-                  {aboutItem[0].utbList2?.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-                <h6>{aboutItem[0].skola3}</h6>
-                <ul>
-                  {aboutItem[0].utbList3?.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-                <h6>Komvux Karlshamn</h6>
-                <h6>Omvårdnadsutbildning, Undersköterska 2008-2009</h6>
+                <h4>Mina utbildningar</h4>
+                {aboutItem.map((utbildning) => (
+                  <div key={utbildning.slug}>
+                    <h6>{utbildning.title}</h6>
+                    <h6>{utbildning.utbildning}</h6>
+                    <h6>{utbildning.tid}</h6>
+                    <ul>
+                      {utbildning.utbList?.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
               <div className="card-body">
                 <h4>Mina Arbetslivserfarenheter</h4>
                 {workItem.map((arbete) => (
                   <div key={arbete.slug}>
+                    {/* <h6>{arbete.title}</h6> */}
                     <h6>{arbete.arbetsroll}</h6>
                     <h6>{arbete.arbetsgivare}</h6>
                     <h6>{arbete.tid}</h6>
@@ -69,3 +62,4 @@ export default async function About() {
     </>
   );
 }
+

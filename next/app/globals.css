@@ -123,6 +123,7 @@ a {
   align-items: center;
   justify-self: center;
 }
+
 .single-image {
   display: flex;
   flex-wrap: wrap;
@@ -231,7 +232,7 @@ a {
   padding: 20px;
 }
 
-#container-contact a{
+#container-contact a {
   color: black;
 }
 .info-contact {
