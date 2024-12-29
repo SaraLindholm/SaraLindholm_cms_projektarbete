@@ -206,7 +206,10 @@ a {
 }
 
 .container-projekt-index .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: auto;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 #eb9c5c, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* border:#eb9c5c 2px solid; */
 }
 .container-projekt-index .card h5 {
   font-weight: bold;

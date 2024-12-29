@@ -14,17 +14,20 @@ export default async function Projects() {
         <div className="container-projekt-index">
           <h2>Projekt</h2>
           <hr className="solid" />
-          <div className="card mb-3" style={{ maxWidth: "60%" }}>
+          <div>
             {allProjects.map((project) => (
-              <div key={project.slug}>
+              <div className="card mb-3" key={project.slug}>
                 <div className="row g-0">
                   <div className="col-md-8">
                     <div className="card-body">
                       <div>
                         <h5 className="card-title">{project.title}</h5>
-                        <p className="card-text">{project.description}</p>
+                        <p className="card-text">{project.summary}</p>
                         <p className="card-text">
-                          <small className="text-body-secondary">
+                          <small
+                            className="text-body-secondary"
+                            style={{ backgroundColor:"rgb(255, 240, 228)", padding: "5px" }}
+                          >
                             {project.category}
                           </small>
                         </p>
@@ -39,18 +42,19 @@ export default async function Projects() {
                   </div>
                   <div className="col-md-4">
                     <Image
-                      src="/img/bild3.png"
+                      src={project.projectImage.url}
                       className="img-fluid rounded-start"
                       alt="..."
-                      width={500}
-                      height={500}
+                      width={700}
+                      height={700}
                     />
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          <div className="card mb-3" style={{ maxWidth: "60%" }}>
+        </div>
+        {/* <div className="card mb-3" style={{ maxWidth: "60%" }}>
             <div className="row g-0">
               <div className="col-md-8">
                 <div className="card-body">
@@ -79,8 +83,8 @@ export default async function Projects() {
                 />
               </div>
             </div>
-          </div>
-          <div className="card mb-3" style={{ maxWidth: "60%" }}>
+          </div> */}
+        {/* <div className="card mb-3" style={{ maxWidth: "60%" }}>
             <div className="row g-0">
               <div className="col-md-8">
                 <div className="card-body">
@@ -109,8 +113,7 @@ export default async function Projects() {
                 />
               </div>
             </div>
-          </div>
-        </div>
+          </div> */}
       </main>
       <Footer />
     </>

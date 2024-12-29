@@ -23,6 +23,7 @@ export default async function Home() {
             <p>{startpageItem[0].mainText.json.content[0].content[0].value}</p>
 
             <Link className="btn projekt-btn" href="/projects">
+              {/* TODO fixa dynamiska länkar överallt */}
               Projekt
             </Link>
             <Link
@@ -37,7 +38,9 @@ export default async function Home() {
           <div className="image">
             <Image
               src={startpageItem[0].imageStartpage.url}
-              alt={startpageItem[0].imageStartpage.description || "Bild på Sara"}
+              alt={
+                startpageItem[0].imageStartpage.description || "Bild på Sara"
+              }
               width={1200}
               height={1200}
             />
