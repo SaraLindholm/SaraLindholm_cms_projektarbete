@@ -45,8 +45,8 @@ export default async function Projects() {
                       src={project.projectImage.url}
                       className="img-fluid rounded-start"
                       alt="..."
-                      width={700}
-                      height={700}
+                      width={500}
+                      height={300}
                     />
                   </div>
                 </div>
