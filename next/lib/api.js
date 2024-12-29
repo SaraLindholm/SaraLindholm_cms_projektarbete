@@ -106,7 +106,7 @@ async function fetchGraphQL(query, preview = false) {
     }
   ).then((response) => response.json());
 }
-
+//fetch för att hämta projekten
 async function fetchGraphQLProject(query, preview = false) {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
@@ -127,7 +127,7 @@ async function fetchGraphQLProject(query, preview = false) {
   ).then((response) => response.json());
 }
 //hämtar först alla projekt för att sedan i fetchProjectSummary definera hur datan ska hanteras, i vilken ordning innehållet ska viasas, limit osv.
-function fetchProjectSummary() {
+function fetchProjectSummary(query) {
   return query?.data?.projectCollection?.items || [];
 }
 
@@ -152,7 +152,7 @@ export async function getAllProjects(
 }
 
 export async function getProjectItems(slug, isDraftMode = false) {
-  const query = await fetchGraphQLProject(
+  const project = await fetchGraphQLProject(
     `query {
         projectCollection(where:{slug: "${slug}"}, limit: 1, preview: ${
       isDraftMode ? "true" : "false"
@@ -164,7 +164,7 @@ export async function getProjectItems(slug, isDraftMode = false) {
       }`,
     isDraftMode
   );
-  return fetchProjectSummary(query)[0];
+  return fetchProjectSummary(project);
 }
 
 //startsidan
