@@ -1,3 +1,4 @@
+//startsida
 const START_GRAPHQL_FIELDS = `
   title
   slug
@@ -22,7 +23,7 @@ const START_GRAPHQL_FIELDS = `
     height
   }
 `;
-
+//Om mig och utbildning
 const ABOUT_GRAPHQL_FIELDS = `
   title
   slug
@@ -31,6 +32,7 @@ const ABOUT_GRAPHQL_FIELDS = `
   tid
   utbList
   `;
+//Om mig och arbetslivserfarenheter
 const WORK_GRAPHQL_FIELDS = `
   title
   slug
@@ -39,7 +41,7 @@ const WORK_GRAPHQL_FIELDS = `
   tid
   erfarenhet
   `;
-
+//kontaktsidan
 const CONTACT_GRAPHQL_FIELDS = `
   title
   slug
@@ -66,6 +68,27 @@ const CONTACT_GRAPHQL_FIELDS = `
   externalLink2
   externalLink3
 `;
+
+const PROJECT_GRAPHQL_FIELDS = `
+  title
+  slug
+	summary
+  mainText {
+    json
+  }
+  date
+  projectImage {
+    title
+    description
+    contentType
+    fileName
+    size
+    url
+    width
+    height
+  }
+  category
+  `;
 async function fetchGraphQL(query, preview = false) {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
@@ -82,6 +105,66 @@ async function fetchGraphQL(query, preview = false) {
       body: JSON.stringify({ query }),
     }
   ).then((response) => response.json());
+}
+
+async function fetchGraphQLProject(query, preview = false) {
+  return fetch(
+    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${
+          preview
+            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
+            : process.env.CONTENTFUL_ACCESS_TOKEN
+        }`,
+      },
+      body: JSON.stringify({ query }),
+      //kopplar alla projekt med taggen "projects". detta skapar möjlighet att innehållet uppdatets vid ny publicering kopplad till "projects"
+      next: { tags: ["projects"] },
+    }
+  ).then((response) => response.json());
+}
+//hämtar först alla projekt för att sedan i fetchProjectSummary definera hur datan ska hanteras, i vilken ordning innehållet ska viasas, limit osv.
+function fetchProjectSummary() {
+  return query?.data?.projectCollection?.items || [];
+}
+
+export async function getAllProjects(
+  //satte limit till 5, enbart pga att jag inte har så många projekt än
+  limit = 5,
+  isDraftMode = false
+) {
+  const projects = await fetchGraphQLProject(
+    `query {
+        projectCollection(where:{slug_exists: true}, order: date_DESC, limit: ${limit}, preview: ${
+      isDraftMode ? "true" : "false"
+    }) {
+          items {
+            ${PROJECT_GRAPHQL_FIELDS}
+          }
+        }
+      }`,
+    isDraftMode
+  );
+  return fetchProjectSummary(projects);
+}
+
+export async function getProjectItems(slug, isDraftMode = false) {
+  const query = await fetchGraphQLProject(
+    `query {
+        projectCollection(where:{slug: "${slug}"}, limit: 1, preview: ${
+      isDraftMode ? "true" : "false"
+    }) {
+          items {
+            ${ARTICLE_GRAPHQL_FIELDS}
+          }
+        }
+      }`,
+    isDraftMode
+  );
+  return fetchProjectSummary(query)[0];
 }
 
 //startsidan
