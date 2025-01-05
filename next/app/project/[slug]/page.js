@@ -32,11 +32,47 @@ export default async function Project({ params }) {
           <div className="card mb-3">
             <div className="card-body">
               <h5>{singleProject[0].title}</h5>
-              <p className="card-text">{singleProject[0].summary}</p>
+              <p className="card-text">
+                <small
+                  className="text-body-secondary"
+                  style={{
+                    backgroundColor: "rgb(255, 240, 228)",
+                    padding: "5px",
+                  }}
+                >
+                  {singleProject[0].category}
+                </small>
+              </p>
+              <p className="card-text">{singleProject[0].date}</p>
+
+              <p className="card-text">
+                {singleProject[0].mainText.json.content[0].content[0].value}
+              </p>
             </div>
           </div>
           <div className="single-image">
             <Image
+              src={singleProject[0].projectImage.url}
+              className="rounded img-fluid"
+              alt="single-image of the project"
+              width={500}
+              height={500}
+            />
+
+            {singleProject[0].multipleImages?.map((item, index) => (
+              <Image
+                src={item.url}
+                className="rounded img-fluid"
+                alt="multiple images of the project"
+                width={500}
+                height={500}
+                key={index}
+              >
+                {item}
+              </Image>
+            ))}
+
+            {/* <Image
               src="/img/bild1.png"
               className="rounded img-fluid"
               alt="..."
@@ -56,7 +92,7 @@ export default async function Project({ params }) {
               alt="..."
               width={500}
               height={500}
-            />
+            /> */}
           </div>
           <div>
             <a
