@@ -59,7 +59,7 @@ export default async function Project({ params }) {
               height={500}
             />
 
-            {singleProject[0].multipleImages?.map((item, index) => (
+            {/* {singleProject[0].multipleImages?.map((item, index) => (
               <Image
                 src={item.url}
                 className="rounded img-fluid"
@@ -71,28 +71,9 @@ export default async function Project({ params }) {
                 {item}
               </Image>
             ))}
+            //TODO varför kan jag inte ha med multipleImaes i min PROJECT_GRAPHQL_FIELDS. när jag har det hämtar den instället en tom Array på samlingsidan för projekten.*/}
 
-            {/* <Image
-              src="/img/bild1.png"
-              className="rounded img-fluid"
-              alt="..."
-              width={500}
-              height={500}
-            />
-            <Image
-              src="/img/bild1.png"
-              className="rounded img-fluid"
-              alt="..."
-              width={500}
-              height={500}
-            />
-            <Image
-              src="/img/bild1.png"
-              className="rounded img-fluid"
-              alt="..."
-              width={500}
-              height={500}
-            /> */}
+
           </div>
           <div>
             <a

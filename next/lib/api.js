@@ -87,15 +87,7 @@ const PROJECT_GRAPHQL_FIELDS = `
     width
     height
   }
-  multipleImages {
-  description
-  contentType
-  fileName
-  size
-  url
-  width
-  height
-}
+
   category
   `;
 async function fetchGraphQL(query, preview = false) {

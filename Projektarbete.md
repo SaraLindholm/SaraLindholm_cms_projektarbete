@@ -16,33 +16,32 @@ Innehållet i Headless-CMS-lösningen ska vara möjligt att administrera från e
     - Det erbjuder också en fungerande kod att återvända till ifall något börjar krångla.
 
 - Portfoliowebplatsen ska bestå av minst dessa sidor, med innehåll hämtat ifrån headless-CMS:
-        - Startsida
-            - rubrik
-            - presentationstext
-            - bild
-        - Projekt-index
-            - varje projekt har:
-                - titel 
-                - kort beskrivning
-                - bild
-                - länk till publicerat projekt( eller href="#")
+        ~~- Startsida~~
+            ~~- rubrik~~
+            ~~- presentationstext~~
+            ~~- bild~~
+       ~~ - Projekt-index~~
+           ~~ - varje projekt har:~~
+               ~~ - titel~~
+                ~~- kort beskrivning~~
+               ~~ - bild~~
+                ~~- länk till publicerat projekt( eller href="#")~~
         - Sida för enskilt projekt
-            - titel
-            - beskrivning
+            ~~- titel~~
+          ~~  - beskrivning~~
             - minst 3 bilder
             - länk till publicerat projekt
         - Om-mig-sida
-            - Presentationstext
-            - Information om utbildningar
-                - minst 3
-            - Information om arbetslivserfarenheter
-                - minst 3
-        - Kontakt-sida
-            - bild
-            - kontaktuppgifter (ex, mail, github, sociala medier)
+           ~~- - Information om utbildningar~~-
+              ~~-  - minst 3~~-
+           ~~- - Information om arbetslivserfarenheter~~-
+               ~~- - minst 3~~-
+       ~~- - Kontakt-sida~~-
+          ~~-  - bild~~-
+           ~~- - kontaktuppgifter (ex, mail, github, sociala medier)~~-
         - 404-sida
             - Lämpligt felmeddelande och länk till startsidan
- 
+
 - En huvudmeny i någon form ska implementeras med länkar till webbplatsens olika sidor.
 
 - Det ska vara möjligt för användaren att filtrera projekt efter kategori. Valfritt om dessa ska listas på egen undersida eller i den befintliga projektöversikten. Kategoriseringen ska vara dynamisk och ändras med innehållet.
