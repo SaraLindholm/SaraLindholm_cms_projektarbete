@@ -1,10 +1,27 @@
 // import { useRouter } from 'next/router';
-
+import { getAllProjects, getProjectItems } from "@/lib/api";
 import Image from "next/image";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
-export default function Project() {
+export async function generateStaticParams() {
+  const allProjects = await getAllProjects();
+  console.log("Generated params:", allProjects);
+  return allProjects.map((project) => ({
+    slug: project.slug,
+  }));
+}
+export default async function Project({ params }) {
+  console.log("Fetching project with slug:", params.slug);
+  const singleProject = await getProjectItems(params.slug);
+  console.log("singelProject:", singleProject);
+
+  if (!singleProject) {
+    notFound();
+  }
+
   return (
     <>
       <Navbar />
@@ -14,14 +31,8 @@ export default function Project() {
           <hr className="solid" />
           <div className="card mb-3">
             <div className="card-body">
-              <h5>Projektets titel</h5>
-              <p className="card-text">
-                Hold on. Harry, it said. Its voice was distant and echoing.
-                Harry looked at Voldemort ... his wide red eyes were still
-                shocked ... he had no more expected this than Harry had . . .
-                and, very dimly. Harry heard the frightened yells of the Death
-                Eaters, prowling around the edges of the golden dome. .
-              </p>
+              <h5>{singleProject.title}</h5>
+              <p className="card-text">{singleProject.summary}</p>
             </div>
           </div>
           <div className="single-image">

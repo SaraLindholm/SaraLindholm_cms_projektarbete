@@ -68,7 +68,7 @@ const CONTACT_GRAPHQL_FIELDS = `
   externalLink2
   externalLink3
 `;
-
+//projekten
 const PROJECT_GRAPHQL_FIELDS = `
   title
   slug
@@ -136,6 +136,7 @@ export async function getAllProjects(
   limit = 5,
   isDraftMode = false
 ) {
+  console.log("Fetching all projects...");
   const projects = await fetchGraphQLProject(
     `query {
         projectCollection(where:{slug_exists: true}, order: date_DESC, limit: ${limit}, preview: ${
@@ -150,15 +151,16 @@ export async function getAllProjects(
   );
   return fetchProjectSummary(projects);
 }
-
+//för enskild-projekt sidn
 export async function getProjectItems(slug, isDraftMode = false) {
+  console.log("Fetching enskilt-projekt slug:", slug);
   const project = await fetchGraphQLProject(
     `query {
         projectCollection(where:{slug: "${slug}"}, limit: 1, preview: ${
       isDraftMode ? "true" : "false"
     }) {
           items {
-            ${ARTICLE_GRAPHQL_FIELDS}
+            ${PROJECT_GRAPHQL_FIELDS}
           }
         }
       }`,
