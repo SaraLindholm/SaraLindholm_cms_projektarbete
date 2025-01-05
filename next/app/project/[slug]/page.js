@@ -1,8 +1,8 @@
 // import { useRouter } from 'next/router';
 import { getAllProjects, getProjectItems } from "@/lib/api";
 import Image from "next/image";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -31,8 +31,8 @@ export default async function Project({ params }) {
           <hr className="solid" />
           <div className="card mb-3">
             <div className="card-body">
-              <h5>{singleProject.title}</h5>
-              <p className="card-text">{singleProject.summary}</p>
+              <h5>{singleProject[0].title}</h5>
+              <p className="card-text">{singleProject[0].summary}</p>
             </div>
           </div>
           <div className="single-image">

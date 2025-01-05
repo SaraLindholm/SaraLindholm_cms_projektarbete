@@ -26,14 +26,17 @@ export default async function Projects() {
                         <p className="card-text">
                           <small
                             className="text-body-secondary"
-                            style={{ backgroundColor:"rgb(255, 240, 228)", padding: "5px" }}
+                            style={{
+                              backgroundColor: "rgb(255, 240, 228)",
+                              padding: "5px",
+                            }}
                           >
                             {project.category}
                           </small>
                         </p>
                         <Link
                           className="btn linkedin-btn"
-                          href="/project[slug]"
+                          href={`/project/${project.slug}`}
                         >
                           Till projektet
                         </Link>
@@ -54,7 +57,6 @@ export default async function Projects() {
             ))}
           </div>
         </div>
-        
       </main>
       <Footer />
     </>
