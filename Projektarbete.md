@@ -31,7 +31,7 @@ Innehållet i Headless-CMS-lösningen ska vara möjligt att administrera från e
           ~~  - beskrivning~~
             - minst 3 bilder
             - länk till publicerat projekt
-        - Om-mig-sida
+        ~~- Om-mig-sida~~
            ~~- - Information om utbildningar~~-
               ~~-  - minst 3~~-
            ~~- - Information om arbetslivserfarenheter~~-
@@ -39,10 +39,10 @@ Innehållet i Headless-CMS-lösningen ska vara möjligt att administrera från e
        ~~- - Kontakt-sida~~-
           ~~-  - bild~~-
            ~~- - kontaktuppgifter (ex, mail, github, sociala medier)~~-
-        - 404-sida
-            - Lämpligt felmeddelande och länk till startsidan
+       ~~ - 404-sida~~
+            ~~- Lämpligt felmeddelande och länk till startsidan~~
 
-- En huvudmeny i någon form ska implementeras med länkar till webbplatsens olika sidor.
+-~~ En huvudmeny i någon form ska implementeras med länkar till webbplatsens olika sidor.~~
 
 - Det ska vara möjligt för användaren att filtrera projekt efter kategori. Valfritt om dessa ska listas på egen undersida eller i den befintliga projektöversikten. Kategoriseringen ska vara dynamisk och ändras med innehållet.
 
