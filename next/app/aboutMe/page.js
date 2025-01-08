@@ -49,7 +49,9 @@ export default async function About() {
                     <h6>{arbete.arbetsgivare}</h6>
                     <h6>{arbete.tid}</h6>
                     <ul>
-                      <li>{arbete.erfarenhet}</li>
+                      {arbete.erfarenhet?.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
                     </ul>
                   </div>
                 ))}
@@ -62,4 +64,3 @@ export default async function About() {
     </>
   );
 }
-
