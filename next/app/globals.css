@@ -74,6 +74,7 @@ a {
   color: black;
   text-align: center;
   display: inline-block;
+  border: none;
 }
 
 .projekt-btn {
@@ -83,6 +84,7 @@ a {
 /* Specifik stil för LinkedIn-knappen */
 .linkedin-btn {
   border: solid black 2px;
+  /* dena border är inte den som är fel */
 }
 
 /* styling single projekt ------------------------*/
@@ -104,7 +106,7 @@ a {
 }
 
 .container-projekt-single .btn {
-  border: solid black 2px;
+  /* border: solid black 2px; */
   margin-bottom: 30px;
 }
 
@@ -124,19 +126,13 @@ a {
   justify-self: center;
 }
 
-.single-image {
+.multi-image {
   display: flex;
   flex-wrap: wrap;
   max-width: 60%;
+  height: auto;
   margin: 0 auto;
   gap: 10px;
-}
-
-.single-image img {
-  flex: 0 0 calc(50% - 10px);
-  max-width: calc(50% - 10px);
-  height: auto;
-  margin-bottom: 20px;
 }
 
 /* style om mig---------------------------  */

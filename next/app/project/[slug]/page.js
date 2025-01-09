@@ -29,11 +29,7 @@ export default async function Project({ params }) {
         <div className="container-projekt-single">
           <h2>Projekt</h2>
           <hr className="solid" />
-          <div>
-            <Link className="btn linkedin-btn" href="/projects" type="button">
-              Tillbaka till projekten
-            </Link>
-          </div>
+
           <div className="card mb-3">
             <div className="card-body">
               <h5>{singleProject[0].title}</h5>
@@ -59,7 +55,7 @@ export default async function Project({ params }) {
               </div>
             </div>
           </div>
-          <div className="single-image">
+          <div className="multi-image">
             {singleProject[0].multipleImagesCollection?.items.map(
               (item, index) => (
                 <Image
@@ -67,15 +63,24 @@ export default async function Project({ params }) {
                   src={item.url}
                   className="rounded img-fluid"
                   alt={item.description || "Bild på projektet"}
-                  width={500}
-                  height={500}
+                  width={800}
+                  height={800}
                 ></Image>
               )
             )}
           </div>
+
           <div>
-            <Link className="btn linkedin-btn" href="#" type="button">
-              Till publicerat projekt
+            <Link className="btn projekt-btn" href="/projects">
+              {/* TODO fixa dynamiska länkar överallt */}
+              Tillbaka till projekten
+            </Link>
+            <Link
+              className="btn linkedin-btn"
+              href=""
+              target="_blank"
+            >
+              Kika vidare på projektet
             </Link>
           </div>
           {/* TODO. lista ut varför klickytan på knappen bara är dess ytterkant? */}
