@@ -1,14 +1,14 @@
-
+import Script from "next/script";
+import "bootstrap/dist/css/bootstrap.min.css";
 import {
   Geist,
   Geist_Mono,
   Architects_Daughter,
   Playfair_Display,
 } from "next/font/google";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+//TODO- få hamburgarmenyn at fungera
 import "./globals.css";
-
-
 
 
 const geistSans = Geist({
@@ -38,13 +38,13 @@ const playfairDisplay = Playfair_Display({
 });
 
 export default function RootLayout({ children }) {
-
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${architectsDaughter.variable} ${playfairDisplay.variable}`}
       >
         {children}
+        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></Script>
       </body>
     </html>
   );

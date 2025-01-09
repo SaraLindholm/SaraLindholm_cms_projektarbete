@@ -129,7 +129,7 @@ a {
 .multi-image {
   display: flex;
   flex-wrap: wrap;
-  max-width: 60%;
+  max-width: 30%;
   height: auto;
   margin: 0 auto;
   gap: 10px;
@@ -314,11 +314,33 @@ a {
   justify-content: center;
 }
 
-/* @media (max-width: 450px) {
-  card-om-mig-text{
+@media (max-width: 499px) {
+  /* .card-om-mig-text{
     width:60%
+  } */
+  .multi-image {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    gap: 10px;
   }
-} */
+}
+
+/* Media Queries */
+/* TOO-fixa mediaqueries */
+
+@media (min-width: 500px) and (max-width: 767px) {
+  .multi-image {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 70%;
+    height: auto;
+    margin: 0 auto;
+    gap: 10px;
+  }
+}
 
 @media (max-width: 768px) {
   .container {
@@ -340,5 +362,13 @@ a {
     outline: 5px solid #e27a4a; /* Yttre ram */
     border-radius: 40% 60% 80% 50%; /* Olika hörn */
     outline-offset: 5px; /* Mellanrum mellan ramarna */
+  }
+  .multi-image {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 60%;
+    height: auto;
+    margin: 0 auto;
+    gap: 10px;
   }
 }

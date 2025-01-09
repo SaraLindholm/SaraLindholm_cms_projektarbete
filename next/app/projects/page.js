@@ -46,10 +46,11 @@ export default async function Projects() {
                   <div className="col-md-4">
                     <Image
                       src={project.projectImage.url}
-                      className="mx-auto rounded"
+                      className="mx-auto d-block rounded"
                       alt="..."
-                      width={250}
-                      height={250}
+                      width={200}
+                      height={200}
+                      style={{ maxHeight: "100%", maxWidth: "100%" }}
                     />
                   </div>
                 </div>

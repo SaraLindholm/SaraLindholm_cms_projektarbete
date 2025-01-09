@@ -29,8 +29,8 @@ Innehållet i Headless-CMS-lösningen ska vara möjligt att administrera från e
         - Sida för enskilt projekt
             ~~- titel~~
           ~~  - beskrivning~~
-            - minst 3 bilder
-            - länk till publicerat projekt
+           ~~ - minst 3 bilder~~
+           ~~ - länk till publicerat projekt~~
         ~~- Om-mig-sida~~
            ~~- - Information om utbildningar~~-
               ~~-  - minst 3~~-
