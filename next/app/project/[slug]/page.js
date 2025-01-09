@@ -30,7 +30,7 @@ export default async function Project({ params }) {
           <h2>Projekt</h2>
           <hr className="solid" />
           <div>
-            <Link className="btn linkedin-btn"  href="/projects" type="button">
+            <Link className="btn linkedin-btn" href="/projects" type="button">
               Tillbaka till projekten
             </Link>
           </div>
@@ -60,28 +60,18 @@ export default async function Project({ params }) {
             </div>
           </div>
           <div className="single-image">
-            <Image
-              src={singleProject[0].projectImage.url}
-              className="rounded img-fluid"
-              alt="single-image of the project"
-              width={500}
-              height={500}
-            />
-
-            {singleProject[0].multipleImages?.map((item, index) => (
-              <Image
-                src={item.url}
-                className="rounded img-fluid"
-                alt="multiple images of the project"
-                width={500}
-                height={500}
-                key={index}
-              >
-                {item}
-              </Image>
-            ))}
-{/*
-            //TODO varför kan jag inte ha med multipleImages i min PROJECT_GRAPHQL_FIELDS. när jag har det hämtar den instället en tom Array på samlingsidan för projekten. */}
+            {singleProject[0].multipleImagesCollection?.items.map(
+              (item, index) => (
+                <Image
+                  key={index}
+                  src={item.url}
+                  className="rounded img-fluid"
+                  alt={item.description || "Bild på projektet"}
+                  width={500}
+                  height={500}
+                ></Image>
+              )
+            )}
           </div>
           <div>
             <Link className="btn linkedin-btn" href="#" type="button">
