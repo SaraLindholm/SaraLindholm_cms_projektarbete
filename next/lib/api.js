@@ -87,6 +87,17 @@ const PROJECT_GRAPHQL_FIELDS = `
     width
     height
   }
+    multipleImagesCollection {
+    items
+    { title
+    description
+    contentType
+    fileName
+    size
+    url
+    width
+    height}
+  }
 
   category
   `;

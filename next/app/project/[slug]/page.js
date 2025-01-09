@@ -29,6 +29,11 @@ export default async function Project({ params }) {
         <div className="container-projekt-single">
           <h2>Projekt</h2>
           <hr className="solid" />
+          <div>
+            <Link className="btn linkedin-btn"  href="/projects" type="button">
+              Tillbaka till projekten
+            </Link>
+          </div>
           <div className="card mb-3">
             <div className="card-body">
               <h5>{singleProject[0].title}</h5>
@@ -45,9 +50,13 @@ export default async function Project({ params }) {
               </p>
               <p className="card-text">{singleProject[0].date}</p>
 
-              <p className="card-text">
-                {singleProject[0].mainText.json.content[0].content[0].value}
-              </p>
+              <div>
+                {singleProject[0].mainText.json.content.map((item, index) => (
+                  <p className="card-text" key={index}>
+                    {item.content[0]?.value}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
           <div className="single-image">
@@ -59,7 +68,7 @@ export default async function Project({ params }) {
               height={500}
             />
 
-            {/* {singleProject[0].multipleImages?.map((item, index) => (
+            {singleProject[0].multipleImages?.map((item, index) => (
               <Image
                 src={item.url}
                 className="rounded img-fluid"
@@ -71,21 +80,15 @@ export default async function Project({ params }) {
                 {item}
               </Image>
             ))}
-            //TODO varför kan jag inte ha med multipleImaes i min PROJECT_GRAPHQL_FIELDS. när jag har det hämtar den instället en tom Array på samlingsidan för projekten.*/}
-
-
+{/*
+            //TODO varför kan jag inte ha med multipleImages i min PROJECT_GRAPHQL_FIELDS. när jag har det hämtar den instället en tom Array på samlingsidan för projekten. */}
           </div>
           <div>
-            <a
-              className="btn linkedin-btn"
-              type="button"
-              href="#"
-              role="button"
-            >
+            <Link className="btn linkedin-btn" href="#" type="button">
               Till publicerat projekt
-            </a>
+            </Link>
           </div>
-          {/* TODO. lista ut varför knappen inte beter sig som den andra knapppen med samma klass */}
+          {/* TODO. lista ut varför klickytan på knappen bara är dess ytterkant? */}
         </div>
       </main>
       <Footer />
