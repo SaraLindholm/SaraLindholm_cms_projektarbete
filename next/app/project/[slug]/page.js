@@ -8,7 +8,6 @@ import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   const allProjects = await getAllProjects();
-  console.log("Generated params:", allProjects);
   return allProjects.map((project) => ({
     slug: project.slug,
   }));
@@ -33,17 +32,25 @@ export default async function Project({ params }) {
           <div className="card mb-3">
             <div className="card-body">
               <h5>{singleProject[0].title}</h5>
-              <p className="card-text">
-                <small
-                  className="text-body-secondary"
-                  style={{
-                    backgroundColor: "rgb(255, 240, 228)",
-                    padding: "5px",
-                  }}
-                >
-                  {singleProject[0].category}
-                </small>
-              </p>
+
+              <small
+                className="text-body-secondary"
+                style={{
+                  backgroundColor: "rgb(255, 240, 228)",
+                  padding: "5px",
+                }}
+              >
+                <p className="card-text">
+                  {singleProject[0].category2Collection.items.map(
+                    (item, index) => (
+                      <span className="category-item" key={index}>
+                        {item.title}
+                      </span>
+                    )
+                  )}
+                </p>
+              </small>
+
               <p className="card-text">{singleProject[0].date}</p>
 
               <div>
@@ -75,11 +82,7 @@ export default async function Project({ params }) {
               {/* TODO fixa dynamiska länkar överallt */}
               Tillbaka till projekten
             </Link>
-            <Link
-              className="btn linkedin-btn"
-              href=""
-              target="_blank"
-            >
+            <Link className="btn linkedin-btn" href="" target="_blank">
               Kika vidare på projektet
             </Link>
           </div>

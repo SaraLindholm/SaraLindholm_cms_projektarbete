@@ -8,10 +8,7 @@ import { notFound } from "next/navigation";
 
 export default async function Contact() {
   const contactItem = await getContactItems();
-  console.log(
-    "contactItem:",
-    contactItem[0]
-  );
+  console.log("contactItem:", contactItem[0]);
 
   if (!contactItem) {
     notFound();
@@ -56,8 +53,8 @@ export default async function Contact() {
               </ul>
             </div>
           </div>
-          {/* varför får jag inte länken att fungera? */}
-          <Link href="/./projects" className="btn projekt-btn">
+          <Link className="btn projekt-btn" href={`/projects/`}>
+            {/* TODO få länken att fungera */}
             Projekt
           </Link>
         </div>

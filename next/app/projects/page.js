@@ -43,10 +43,10 @@ export default async function Projects() {
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-4">
+                  <div className="col-md-4 d-flex align-items-center">
                     <Image
                       src={project.projectImage.url}
-                      className="mx-auto d-block rounded"
+                      className="mx-auto rounded"
                       alt="..."
                       width={200}
                       height={200}
