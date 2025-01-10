@@ -50,9 +50,6 @@ export default async function Project({ params }) {
                   )}
                 </p>
               </small>
-
-              <p className="card-text">{singleProject[0].date}</p>
-
               <div>
                 {singleProject[0].mainText.json.content.map((item, index) => (
                   <p className="card-text" key={index}>
@@ -60,6 +57,9 @@ export default async function Project({ params }) {
                   </p>
                 ))}
               </div>
+              <p className="card-text">
+                {new Date(singleProject[0].date).toLocaleDateString("sv-SE")}
+              </p>
             </div>
           </div>
           <div className="multi-image">

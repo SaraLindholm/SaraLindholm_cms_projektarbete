@@ -13,6 +13,35 @@ export default async function Projects() {
       <main>
         <div className="container-projekt-index">
           <h2>Projekt</h2>
+          <div className="dropdown">
+            <a
+              className="btn btn-secondary dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Dropdown link
+            </a>
+
+            <ul className="dropdown-menu">
+              <li>
+                <a className="dropdown-item" href="#">
+                  Action
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Another action
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Something else here
+                </a>
+              </li>
+            </ul>
+          </div>
           <hr className="solid" />
           <div>
             {allProjects.map((project) => (
@@ -29,9 +58,20 @@ export default async function Projects() {
                             style={{
                               backgroundColor: "rgb(255, 240, 228)",
                               padding: "5px",
+                              display: "inline-block", // Lägg till detta om du vill göra small blockliknande
                             }}
                           >
-                            {project.category}
+                            {project.category2Collection.items.map(
+                              (item, index) => (
+                                <span
+                                  className="category-item"
+                                  key={index}
+                                  style={{ marginRight: "5px" }}
+                                >
+                                  {item.title}
+                                </span>
+                              )
+                            )}
                           </small>
                         </p>
                         <Link

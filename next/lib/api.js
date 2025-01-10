@@ -98,10 +98,11 @@ const PROJECT_GRAPHQL_FIELDS = `
     width
     height}
   }
-  category
+  
    category2Collection{
         items{
           title
+          slug
         }
 
       }
@@ -109,10 +110,6 @@ const PROJECT_GRAPHQL_FIELDS = `
 
   `;
 async function fetchGraphQL(query, preview = false) {
-  // category2Collection{
-  //   items{
-  //     title
-  //   ska ligga i min project}
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
     {
