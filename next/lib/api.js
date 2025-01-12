@@ -68,6 +68,13 @@ const CONTACT_GRAPHQL_FIELDS = `
   externalLink2
   externalLink3
 `;
+
+//kategorier för filtrering
+const CATEGORY_GRAPHQL_FIELDS = `
+  title
+  slug
+  `;
+
 //projekten
 const PROJECT_GRAPHQL_FIELDS = `
   title
@@ -98,7 +105,6 @@ const PROJECT_GRAPHQL_FIELDS = `
     width
     height}
   }
-  
    category2Collection{
         items{
           title
@@ -156,7 +162,6 @@ export async function getAllProjects(
   limit = 5,
   isDraftMode = false
 ) {
-  console.log("Fetching all projects...");
   const projects = await fetchGraphQLProject(
     `query {
         projectCollection(where:{slug_exists: true}, order: date_DESC, limit: ${limit}, preview: ${
@@ -187,6 +192,20 @@ export async function getProjectItems(slug, isDraftMode = false) {
     isDraftMode
   );
   return fetchProjectSummary(project);
+}
+
+//för att hämta kategorier
+export async function getCategoryItems() {
+  const query = await fetchGraphQL(
+    ` query{
+      categoryCollection{
+        items {
+          ${CATEGORY_GRAPHQL_FIELDS}
+        }
+      }
+    }`
+  );
+  return query?.data?.categoryCollection?.items || [];
 }
 
 //startsidan

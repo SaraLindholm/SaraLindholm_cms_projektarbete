@@ -1,4 +1,4 @@
-import { getAllProjects } from "@/lib/api";
+import { getAllProjects, getCategoryItems } from "@/lib/api";
 import Image from "next/image";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -7,7 +7,14 @@ import Link from "next/link";
 export default async function Projects() {
   const allProjects = await getAllProjects();
   console.log("allProjects:", allProjects);
+
+  const allCategories = await getCategoryItems();
+  console.log("allCategories:", allCategories);
+
+  
+
   return (
+    // kan filteringen vara något i stil med at if category.name === category2.name { return map av projekt med den kategorin}?
     <>
       <Navbar />
       <main>
@@ -15,31 +22,22 @@ export default async function Projects() {
           <h2>Projekt</h2>
           <div className="dropdown">
             <a
-              className="btn btn-secondary dropdown-toggle"
+              className="btn dropdown-toggle"
               href="#"
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Dropdown link
+              Filtrera Projekten
             </a>
-
             <ul className="dropdown-menu">
-              <li>
-                <a className="dropdown-item" href="#">
-                  Action
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Another action
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </li>
+              {allCategories.map((item, index) => (
+                <li key={index}>
+                  <a className="dropdown-item" href={item.slug}>
+                    {item.title}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           <hr className="solid" />
@@ -58,7 +56,7 @@ export default async function Projects() {
                             style={{
                               backgroundColor: "rgb(255, 240, 228)",
                               padding: "5px",
-                              display: "inline-block", // Lägg till detta om du vill göra small blockliknande
+                              display: "inline-block",
                             }}
                           >
                             {project.category2Collection.items.map(
