@@ -19,7 +19,9 @@ export default async function Home() {
         <div className="container">
           <div className="info">
             <h4> {startpageItem[0].title}</h4>
-            <h2>{startpageItem[0].introText}</h2>
+            <h2>{startpageItem[0].introText}
+              
+            </h2>
             <p>{startpageItem[0].mainText.json.content[0].content[0].value}</p>
 
             <Link className="btn projekt-btn" href="/projects">

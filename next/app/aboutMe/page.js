@@ -1,6 +1,6 @@
 // import { useRouter } from 'next/router';
 
-import { getAboutItems, getWorkItems } from "@/lib/api";
+import { getAboutItems, getWorkItems, getStartpageItems } from "@/lib/api";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { notFound } from "next/navigation";
@@ -10,6 +10,8 @@ export default async function About() {
   console.log("aboutItem:", aboutItem);
   const workItem = await getWorkItems();
   console.log("workItem:", workItem);
+  const introText = await getStartpageItems();
+  console.log("introText:", introText[0]);
 
   if (!aboutItem) {
     notFound();
@@ -23,7 +25,13 @@ export default async function About() {
           <div className="cardd mb-3">
             <div className="card-container">
               <div id="card-om-mig-text">
-                Info-text om mig som kan läggas till senare
+               
+
+                {introText[0].mainText.json.content.map((item, index) => (
+                  <p className="card-text" key={index}>
+                    {item.content[0]?.value}
+                  </p>
+                ))}
               </div>
               <div className="card-body">
                 <h4>Mina utbildningar</h4>
