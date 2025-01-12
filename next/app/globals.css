@@ -214,11 +214,12 @@ a {
 /* style för kontakt------------------------*/
 
 #container-contact {
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   margin-top: 50px;
   width: 70%;
-  height: fit-content;
+  height: fit-content; /* Behåll detta om du vill att innehållet ska styra höjden */
   border-radius: 5px;
   margin-left: auto; /* Centrerar horisontellt */
   margin-right: auto;
@@ -226,6 +227,15 @@ a {
   align-items: center; /* Vertikal centrering av innehållet */
   justify-content: space-between; /* Ger utrymme mellan innehållet */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.contact li {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.contact i {
+  margin-right: 10px; /* Skapar mellanrum mellan ikonen och texten */
 }
 #container-contact h2 {
   padding: 20px;
@@ -248,9 +258,9 @@ a {
 }
 
 .image-contact img {
-  padding: 10px;
+  padding: 20px;
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 10px;
   max-width: 70%; /* Gör att bilden inte blir större än sektionen */
   height: auto; /* Behåller proportionerna */

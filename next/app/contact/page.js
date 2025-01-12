@@ -32,31 +32,31 @@ export default async function Contact() {
             </div>
             <div id="text-contact">
               <h5>{contactItem[0].introText}</h5>
-              <p>{contactItem[0].mainText.json.content[0].content[0].value}</p>
+              {contactItem[0].mainText.json.content.map((item, index) => (
+                <p className="card-text" key={index}>
+                  {item.content[0]?.value}
+                </p>
+              ))}
               <ul className="contact">
                 <li>
                   <Link href={contactItem[0].externalLink} target="_blank">
-                    LinkedIn<i className="fa-brands fa-linkedin fa-2x"></i>
+                    <i className="fa-brands fa-linkedin fa-2x"></i>LinkedIn
                   </Link>
                 </li>
                 <li>
                   <Link href={contactItem[0].externalLink2} target="_blank">
-                    GitHub<i className="fa-brands fa-github fa-2x"></i>
+                    <i className="fa-brands fa-github fa-2x"></i>GitHub
                   </Link>
                 </li>
 
                 <li>
                   <Link href={contactItem[0].externalLink3} target="_blank">
-                    Mail<i className="fa-solid fa-envelope fa-2x"></i>
+                    <i className="fa-solid fa-envelope fa-2x"></i>Mail
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
-          <Link className="btn projekt-btn" href={`/projects/`}>
-            {/* TODO få länken att fungera */}
-            Projekt
-          </Link>
         </div>
       </main>
       <Footer />
