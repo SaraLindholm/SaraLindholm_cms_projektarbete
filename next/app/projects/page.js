@@ -11,7 +11,7 @@ export default async function Projects() {
   const allCategories = await getCategoryItems();
   console.log("allCategories:", allCategories);
 
-  
+
 
   return (
     // kan filteringen vara något i stil med at if category.name === category2.name { return map av projekt med den kategorin}?
@@ -59,7 +59,7 @@ export default async function Projects() {
                               display: "inline-block",
                             }}
                           >
-                            {project.category2Collection.items.map(
+                            {project.category2Collection?.items?.map(
                               (item, index) => (
                                 <span
                                   className="category-item"

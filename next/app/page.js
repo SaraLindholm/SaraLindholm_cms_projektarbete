@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 
 export default async function Home() {
   const startpageItem = await getStartpageItems();
-  console.log("startpageItem:", startpageItem[0]);
+  console.log("startpageItem:", startpageItem[1]);
 
   if (!startpageItem) {
     notFound();
@@ -18,11 +18,9 @@ export default async function Home() {
       <main>
         <div className="container">
           <div className="info">
-            <h4> {startpageItem[0].title}</h4>
-            <h2>{startpageItem[0].introText}
-              
-            </h2>
-            <p>{startpageItem[0].mainText.json.content[0].content[0].value}</p>
+            <h4> {startpageItem[1].title}</h4>
+            <h2>{startpageItem[1].introText}</h2>
+            <p>{startpageItem[1].mainText.json.content[0].content[0].value}</p>
 
             <Link className="btn projekt-btn" href="/projects">
               {/* TODO fixa dynamiska länkar överallt */}
@@ -30,18 +28,18 @@ export default async function Home() {
             </Link>
             <Link
               className="btn linkedin-btn"
-              href={startpageItem[0].externalLink}
+              href={startpageItem[1].externalLink}
               target="_blank"
             >
               LinkedIn
             </Link>
-            {console.log(startpageItem[0].externalLink)}
+            {console.log(startpageItem[1].externalLink)}
           </div>
           <div className="image">
             <Image
-              src={startpageItem[0].imageStartpage.url}
+              src={startpageItem[1].imageStartpage.url}
               alt={
-                startpageItem[0].imageStartpage.description || "Bild på Sara"
+                startpageItem[1].imageStartpage.description || "Bild på Sara"
               }
               width={1200}
               height={1200}
