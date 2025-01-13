@@ -32,7 +32,6 @@ export default async function About() {
                     </p>
                   ))}
                 </div>
-               
               </div>
               <div className="card-body">
                 <h4>Mina utbildningar</h4>
@@ -51,14 +50,14 @@ export default async function About() {
               </div>
               <div className="card-body">
                 <h4>Mina Arbetslivserfarenheter</h4>
-                {workItem.map((arbete) => (
-                  <div key={arbete.slug}>
-                    {/* <h6>{arbete.title}</h6> */}
-                    <h6>{arbete.arbetsroll}</h6>
-                    <h6>{arbete.arbetsgivare}</h6>
-                    <h6>{arbete.tid}</h6>
+                {workItem.map((work) => (
+                  <div key={work.slug}>
+                    {/* <h6>{work.title}</h6> */}
+                    <h6>{work.arbetsroll}</h6>
+                    <h6>{work.arbetsgivare}</h6>
+                    <h6>{work.tid}</h6>
                     <ul>
-                      {arbete.erfarenhet?.map((item, index) => (
+                      {work.erfarenhet?.map((item, index) => (
                         <li key={index}>{item}</li>
                       ))}
                     </ul>

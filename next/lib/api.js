@@ -73,7 +73,55 @@ const CONTACT_GRAPHQL_FIELDS = `
 const CATEGORY_GRAPHQL_FIELDS = `
   title
   slug
-  `;
+
+
+`;
+const CATEGORY_GRAPHQL_FIELDS2 = `
+  title
+  slug
+  linkedFrom {
+    projectCollection {
+      items {
+        title
+  slug
+	summary
+  mainText {
+    json
+  }
+  date
+  projectImage {
+    title
+    description
+    contentType
+    fileName
+    size
+    url
+    width
+    height
+  }
+    multipleImagesCollection {
+    items
+    { title
+    description
+    contentType
+    fileName
+    size
+    url
+    width
+    height}
+  }
+   category2Collection{
+        items{
+          title
+          slug
+        }
+
+      }
+        }
+      }
+    }
+  }
+`;
 
 //projekten
 const PROJECT_GRAPHQL_FIELDS = `
@@ -115,6 +163,57 @@ const PROJECT_GRAPHQL_FIELDS = `
 
 
   `;
+
+const FILTERED_PROJECT_GRAPHQL_FIELDS = `
+  query{
+    categoryCollection (where: { slug: "react" }){
+      items{
+        linkedFrom{
+       projectCollection{
+        items{
+          title
+  slug
+	summary
+  mainText {
+    json
+  }
+  date
+  projectImage {
+    title
+    description
+    contentType
+    fileName
+    size
+    url
+    width
+    height
+  }
+    multipleImagesCollection {
+    items
+    { title
+    description
+    contentType
+    fileName
+    size
+    url
+    width
+    height}
+  }
+   category2Collection{
+        items{
+          title
+          slug
+        }
+
+      }
+
+        }
+      }
+          }
+      }
+    }
+  }`;
+
 async function fetchGraphQL(query, preview = false) {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
@@ -132,6 +231,7 @@ async function fetchGraphQL(query, preview = false) {
     }
   ).then((response) => response.json());
 }
+
 //fetch för att hämta projekten
 async function fetchGraphQLProject(query, preview = false) {
   return fetch(
@@ -160,11 +260,14 @@ function fetchProjectSummary(query) {
 export async function getAllProjects(
   //satte limit till 5, enbart pga att jag inte har så många projekt än
   limit = 5,
-  isDraftMode = false
+  isDraftMode = false,
+  categoryIds = []
 ) {
+  // const categoryFilter = categoryIds.length;
+
   const projects = await fetchGraphQLProject(
     `query {
-        projectCollection(where:{slug_exists: true}, order: date_DESC, limit: ${limit}, preview: ${
+        projectCollection( where:{slug_exists: true}, order: date_DESC, limit: ${limit}, preview: ${
       isDraftMode ? "true" : "false"
     }) {
           items {
@@ -176,6 +279,7 @@ export async function getAllProjects(
   );
   return fetchProjectSummary(projects);
 }
+
 //för enskild-projekt sidn
 export async function getProjectItems(slug, isDraftMode = false) {
   console.log("Fetching enskilt-projekt slug:", slug);
@@ -197,8 +301,8 @@ export async function getProjectItems(slug, isDraftMode = false) {
 //för att hämta kategorier
 export async function getCategoryItems() {
   const query = await fetchGraphQL(
-    ` query{
-      categoryCollection{
+    ` query {
+      categoryCollection {
         items {
           ${CATEGORY_GRAPHQL_FIELDS}
         }

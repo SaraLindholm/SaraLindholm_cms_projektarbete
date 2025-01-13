@@ -1,10 +1,10 @@
 import { getAllProjects, getCategoryItems } from "@/lib/api";
 import Image from "next/image";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 import Link from "next/link";
 
-export default async function Projects() {
+export default async function filteredProjects() {
   const allProjects = await getAllProjects();
   console.log("allProjects:", allProjects);
 
@@ -17,7 +17,7 @@ export default async function Projects() {
       <Navbar />
       <main>
         <div className="container-projekt-index">
-          <h2>Projekt</h2>
+          <h2>Kategori: {allCategories[0].slug}</h2>
           <div className="dropdown">
             <a
               className="btn dropdown-toggle"
