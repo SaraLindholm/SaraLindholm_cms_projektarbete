@@ -1,4 +1,8 @@
-import { getAllProjects, getCategoryItems } from "@/lib/api";
+import {
+  getAllProjects,
+  getCategoryItems,
+  getFilteredProjects,
+} from "@/lib/api";
 import Image from "next/image";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
@@ -7,6 +11,12 @@ import Link from "next/link";
 export default async function filteredProjects() {
   const allProjects = await getAllProjects();
   console.log("allProjects:", allProjects);
+
+  // const filteredProject = await getFilteredProjects();
+
+  const query = await getFilteredProjects();
+  const filteredProject = query?.data?.categoryCollection?.items || [];
+  console.log("filteredProject2:", query.data.categoryCollection);
 
   const allCategories = await getCategoryItems();
   console.log("allCategories:", allCategories);
@@ -17,7 +27,7 @@ export default async function filteredProjects() {
       <Navbar />
       <main>
         <div className="container-projekt-index">
-          <h2>Kategori: {allCategories[0].slug}</h2>
+          <h2>Kategori: {allCategories.slug}</h2>
           <div className="dropdown">
             <a
               className="btn dropdown-toggle"
