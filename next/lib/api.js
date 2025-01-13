@@ -73,14 +73,13 @@ const CONTACT_GRAPHQL_FIELDS = `
 const CATEGORY_GRAPHQL_FIELDS = `
   title
   slug
-
-
 `;
-const CATEGORY_GRAPHQL_FIELDS2 = `
+//filtrerade projekt
+const FILTERED_PROJECT_GRAPHQL_FIELDS = `
   title
   slug
   linkedFrom {
-    projectCollection {
+    projectCollection(limit: 10) {
       items {
         title
   slug
@@ -110,7 +109,7 @@ const CATEGORY_GRAPHQL_FIELDS2 = `
     width
     height}
   }
-   category2Collection{
+   category2Collection(limit: 3){
         items{
           title
           slug
@@ -120,7 +119,6 @@ const CATEGORY_GRAPHQL_FIELDS2 = `
         }
       }
     }
-  }
 `;
 
 //projekten
@@ -163,56 +161,6 @@ const PROJECT_GRAPHQL_FIELDS = `
 
 
   `;
-
-const FILTERED_PROJECT_GRAPHQL_FIELDS = `
-  query{
-    categoryCollection (where: { slug: "react" }){
-      items{
-        linkedFrom{
-       projectCollection{
-        items{
-          title
-  slug
-	summary
-  mainText {
-    json
-  }
-  date
-  projectImage {
-    title
-    description
-    contentType
-    fileName
-    size
-    url
-    width
-    height
-  }
-    multipleImagesCollection {
-    items
-    { title
-    description
-    contentType
-    fileName
-    size
-    url
-    width
-    height}
-  }
-   category2Collection{
-        items{
-          title
-          slug
-        }
-
-      }
-
-        }
-      }
-          }
-      }
-    }
-  }`;
 
 async function fetchGraphQL(query, preview = false) {
   return fetch(
@@ -263,8 +211,6 @@ export async function getAllProjects(
   isDraftMode = false,
   categoryIds = []
 ) {
-  // const categoryFilter = categoryIds.length;
-
   const projects = await fetchGraphQLProject(
     `query {
         projectCollection( where:{slug_exists: true}, order: date_DESC, limit: ${limit}, preview: ${
@@ -279,10 +225,23 @@ export async function getAllProjects(
   );
   return fetchProjectSummary(projects);
 }
+//filtrerade projekt
+export async function getFilteredProjects(limit = 10) {
+  const filteredProjects = await fetchGraphQLProject(
+    `query {
+        categoryCollection( where: { slug: "react" }, limit: ${limit}) {
+          items {
+            ${FILTERED_PROJECT_GRAPHQL_FIELDS}
+          }
+        }
+      }`
+  );
+  console.log("filteredProjects:", filteredProjects);
+  return filteredProjects;
+}
 
 //för enskild-projekt sidn
 export async function getProjectItems(slug, isDraftMode = false) {
-  console.log("Fetching enskilt-projekt slug:", slug);
   const project = await fetchGraphQLProject(
     `query {
         projectCollection(where:{slug: "${slug}"}, limit: 1, preview: ${

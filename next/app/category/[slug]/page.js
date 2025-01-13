@@ -16,7 +16,23 @@ export default async function filteredProjects() {
 
   const query = await getFilteredProjects();
   const filteredProject = query?.data?.categoryCollection?.items || [];
-  console.log("filteredProject2:", query.data.categoryCollection);
+  console.log("filteredProject2:", query?.data?.categoryCollection);
+
+  filteredProject.forEach((category) => {
+    console.log(`Kategori: ${category.title}`);
+
+    // Hämta projekten kopplade till denna kategori
+    const projects = category?.linkedFrom?.projectCollection?.items || [];
+
+    // Mappa ut varje projekt
+    projects.forEach((project) => {
+      console.log(`Projektets titel: ${project.title}`);
+      console.log(`Projektets slug: ${project.slug}`);
+      console.log(`Projektets beskrivning: ${project.summary}`);
+      console.log(`Publiceringsdatum: ${project.date}`);
+      console.log(`Bildens URL: ${project.projectImage?.url}`);
+    });
+  });
 
   const allCategories = await getCategoryItems();
   console.log("allCategories:", allCategories);
@@ -27,7 +43,8 @@ export default async function filteredProjects() {
       <Navbar />
       <main>
         <div className="container-projekt-index">
-          <h2>Kategori: {allCategories.slug}</h2>
+          <h2>Kategori: </h2>
+
           <div className="dropdown">
             <a
               className="btn dropdown-toggle"
@@ -50,57 +67,28 @@ export default async function filteredProjects() {
           </div>
           <hr className="solid" />
           <div>
-            {allProjects.map((project) => (
-              <div className="card mb-3" key={project.slug}>
+            {filteredProject.map((category) => (
+              <div className="card mb-3" key={category.slug}>
+                 <h2>Kategori: {category.title}</h2>
                 <div className="row g-0">
-                  <div className="col-md-8">
-                    <div className="card-body">
-                      <div>
-                        <h5 className="card-title">{project.title}</h5>
-                        <p className="card-text">{project.summary}</p>
-                        <p className="card-text">
-                          <small
-                            className="text-body-secondary"
-                            style={{
-                              backgroundColor: "rgb(255, 240, 228)",
-                              padding: "5px",
-                              display: "inline-block",
-                            }}
-                          >
-                            {project.category2Collection?.items?.map(
-                              (item, index) => (
-                                <span
-                                  className="category-item"
-                                  key={index}
-                                  style={{ marginRight: "5px" }}
-                                >
-                                  {item.title}
-                                </span>
-                              )
-                            )}
-                          </small>
-                        </p>
-                        <Link
-                          className="btn linkedin-btn"
-                          href={`/project/${project.slug}`}
-                        >
-                          Till projektet
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-4 d-flex align-items-center">
-                    <Image
-                      src={project.projectImage.url}
-                      className="mx-auto rounded"
-                      alt="..."
-                      width={200}
-                      height={200}
-                      style={{ maxHeight: "100%", maxWidth: "100%" }}
-                    />
-                  </div>
-                </div>
-              </div>
+                {category?.linkedFrom?.projectCollection?.items.map((project) => (
+            <div key={project.slug}>
+              <h3>{project.title}</h3>
+              <p>{project.summary}</p>
+              <p>Publicerat: {new Date(project.date).toLocaleDateString()}</p>
+              {project.projectImage && (
+                <img
+                  src={project.projectImage.url}
+                  alt={project.projectImage.description}
+                  width={project.projectImage.width}
+                  height={project.projectImage.height}
+                />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    
             ))}
           </div>
         </div>
