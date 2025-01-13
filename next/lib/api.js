@@ -226,7 +226,7 @@ export async function getAllProjects(
   return fetchProjectSummary(projects);
 }
 //filtrerade projekt
-export async function getFilteredProjects(limit = 10) {
+export async function getFilteredProjects(slug, limit = 10) {
   const filteredProjects = await fetchGraphQLProject(
     `query {
         categoryCollection( where: { slug: "elm" }, limit: ${limit}) {

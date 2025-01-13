@@ -83,7 +83,7 @@ export default async function Projects() {
                     <Image
                       src={project.projectImage.url}
                       className="mx-auto rounded"
-                      alt="..."
+                      alt={project.projectImage.description || "Projektbild saknas" }
                       width={200}
                       height={200}
                       style={{ maxHeight: "100%", maxWidth: "100%" }}

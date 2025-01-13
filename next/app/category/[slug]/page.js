@@ -62,10 +62,10 @@ export default async function filteredProjects() {
                               {project.projectImage && (
                                 <Image
                                   src={project.projectImage.url}
-                                  alt={project.projectImage.description || ""}
-                                  width={150}
-                                  height={150}
-                                  className="img-fluid rounded"
+                                  alt={project.projectImage.description || "Projektbild saknas" }
+                                  width={200}
+                                  height={200}
+                                  className="mx-auto rounded"
                                 />
                               )}
                             </div>
