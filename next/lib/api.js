@@ -229,7 +229,7 @@ export async function getAllProjects(
 export async function getFilteredProjects(limit = 10) {
   const filteredProjects = await fetchGraphQLProject(
     `query {
-        categoryCollection( where: { slug: "react" }, limit: ${limit}) {
+        categoryCollection( where: { slug: "elm" }, limit: ${limit}) {
           items {
             ${FILTERED_PROJECT_GRAPHQL_FIELDS}
           }
