@@ -274,18 +274,16 @@ a {
   max-width: 50%;
 }
 
-/* style footern------------------------------------------ */
 #footer {
   margin-top: 50px;
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 200px;
-  position: relative;
-  bottom: 0;
+  height: 200px; /* Fixerad höjd */
   background: #eb9c5c;
-  overflow: visible;
+  position: relative; /* Viktigt för att placera innehåll med absolute inom fotern */
 }
+
 #footer::after {
   content: "";
   position: absolute;
@@ -298,30 +296,14 @@ a {
   background-size: cover;
 }
 
-#footer li {
-  list-style: none;
-  padding: 10px;
-}
-
-#footer ul {
-  padding-left: 0;
-}
-
-#footer a {
-  color: black;
-  size: 2rem;
-}
 #footer .bottom {
+  position: absolute;
+  bottom: 10px; /* Lite marginal från botten */
+  left: 50%; /* Centrera horisontellt */
+  transform: translateX(-50%); /* Justera för perfekt centrering */
   font-size: 1.3rem;
   text-align: center;
-  width: 100%;
   z-index: 1;
-}
-#footer .contact {
-  height: 150px;
-  width: 100% !important;
-  display: flex;
-  justify-content: center;
 }
 
 @media (max-width: 499px) {

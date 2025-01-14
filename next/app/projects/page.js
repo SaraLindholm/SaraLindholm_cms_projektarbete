@@ -6,13 +6,10 @@ import Link from "next/link";
 
 export default async function Projects() {
   const allProjects = await getAllProjects();
-  console.log("allProjects:", allProjects);
 
   const allCategories = await getCategoryItems();
-  console.log("allCategories:", allCategories);
 
   return (
-    // kan filteringen vara något i stil med at if category.name === category2.name { return map av projekt med den kategorin}?
     <>
       <Navbar />
       <main>
