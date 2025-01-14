@@ -13,7 +13,6 @@ export async function generateStaticParams() {
   }));
 }
 export default async function Project({ params }) {
-
   const singleProject = await getProjectItems(params.slug);
   console.log("singelProject:", singleProject);
 

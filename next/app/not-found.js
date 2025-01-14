@@ -12,7 +12,7 @@ export default function NotFound() {
         <p>
           {" "}
           <Link className="btn linkedin-btn" href={`/`}>
-            Till startsidan{" "}
+            Till startsidan
           </Link>
         </p>
       </div>
