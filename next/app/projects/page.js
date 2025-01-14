@@ -36,6 +36,14 @@ export default async function Projects() {
                   </a>
                 </li>
               ))}
+              <li>
+                <hr className="dropdown-divider" />
+              </li>
+              <li>
+                <a className="dropdown-item" href={`/projects`}>
+                  Alla projekt
+                </a>
+              </li>
             </ul>
           </div>
           <hr className="solid" />
@@ -83,7 +91,9 @@ export default async function Projects() {
                     <Image
                       src={project.projectImage.url}
                       className="mx-auto rounded"
-                      alt={project.projectImage.description || "Projektbild saknas" }
+                      alt={
+                        project.projectImage.description || "Projektbild saknas"
+                      }
                       width={200}
                       height={200}
                       style={{ maxHeight: "100%", maxWidth: "100%" }}

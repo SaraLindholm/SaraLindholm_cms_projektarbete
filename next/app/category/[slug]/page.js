@@ -49,6 +49,15 @@ export default async function filteredProjects({ params }) {
                   </a>
                 </li>
               ))}
+              <li>
+                <hr className="dropdown-divider" />
+              </li>
+
+              <li>
+                <a className="dropdown-item" href={`/projects`}>
+                  Alla projekt
+                </a>
+              </li>
             </ul>
           </div>
           <hr className="solid" />
