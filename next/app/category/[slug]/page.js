@@ -1,4 +1,3 @@
-
 import {
   getAllProjects,
   getCategoryItems,
@@ -8,12 +7,18 @@ import Image from "next/image";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Link from "next/link";
-
-export default async function filteredProjects() {
+export async function generateStaticParams() {
   const allProjects = await getAllProjects();
-  console.log("allProjects:", allProjects);
+  return allProjects.map((project) => ({
+    slug: project.slug,
+  }));
+}
 
-  const query = await getFilteredProjects();
+export default async function filteredProjects({ params }) {
+  const allProjects = await getAllProjects();
+  console.log("Fetching project with slug:", params.slug);
+
+  const query = await getFilteredProjects(params.slug);
   const filteredProject = query?.data?.categoryCollection?.items || [];
   console.log("filteredProject2:", query?.data?.categoryCollection);
 
@@ -62,7 +67,10 @@ export default async function filteredProjects() {
                               {project.projectImage && (
                                 <Image
                                   src={project.projectImage.url}
-                                  alt={project.projectImage.description || "Projektbild saknas" }
+                                  alt={
+                                    project.projectImage.description ||
+                                    "Projektbild saknas"
+                                  }
                                   width={200}
                                   height={200}
                                   className="mx-auto rounded"
