@@ -12,7 +12,7 @@ export default async function Home() {
 
   if (!startpageItem) {
     notFound();
-    //om det inte inte finns data att visas 404
+    //om det inte inte finns data att visas 404()
   }
   return (
     <>

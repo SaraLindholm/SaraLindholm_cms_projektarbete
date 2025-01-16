@@ -5,16 +5,21 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+//Aktuella importer, bland annat funktionerna skapade i api.js
 
+// async funktion som genererar statiska sidor för samtliga projekt baserat på project.slug
 export async function generateStaticParams() {
+  // hämtar alla projekt från funktionen och returnerar en liusta med alla projekts slugs
   const allProjects = await getAllProjects();
   return allProjects.map((project) => ({
     slug: project.slug,
+    //returnerar samtliga slug som en parameter för att visa sidor dynamiskt/rutt
   }));
 }
+
 export default async function Project({ params }) {
   const singleProject = await getProjectItems(params.slug);
-  console.log("singelProject:", singleProject);
+  //hämtar ett specifikt projekt baserat på dess slug
 
   if (!singleProject) {
     notFound();
@@ -78,14 +83,12 @@ export default async function Project({ params }) {
 
           <div>
             <Link className="btn projekt-btn" href="/projects">
-              {/* TODO fixa dynamiska länkar överallt */}
               Tillbaka till projekten
             </Link>
             <Link className="btn linkedin-btn" href="" target="_blank">
               Kika vidare på projektet
             </Link>
           </div>
-          {/* TODO. lista ut varför klickytan på knappen bara är dess ytterkant? */}
         </div>
       </main>
       <Footer />

@@ -7,23 +7,25 @@ import Image from "next/image";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Link from "next/link";
+//Aktuella importer, bland annat funktionerna skapade i api.js
 
+// async funktion som genererar statiska sidor för samtliga projekt baserat på project.slug
 export async function generateStaticParams() {
+  // hämtar alla projekt från funktionen och returnerar en lista med alla projekts slugs
   const allProjects = await getAllProjects();
   return allProjects.map((project) => ({
     slug: project.slug,
+    //returnerar samtliga slug som en parameter för att visa sidor dynamiskt/rutt
   }));
 }
 
 export default async function filteredProjects({ params }) {
-  // const allProjects = await getAllProjects();
-  // console.log("Fetching project with slug:", params.slug);
-
   const query = await getFilteredProjects(params.slug);
+  // Hämtar data för filtrering  baserat på slug
   const filteredProject = query?.data?.categoryCollection?.items || [];
-  console.log("filteredProject2:", query?.data?.categoryCollection);
-
+  //...och hämtar aktuellt/aktuella projekt  utifrån den datan
   const allCategories = await getCategoryItems();
+  //hämtar alla kategorier från funktionen getCategoryItems() skapade i api
 
   return (
     <>

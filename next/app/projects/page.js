@@ -3,11 +3,12 @@ import Image from "next/image";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Link from "next/link";
+//Aktuella importer, bland annat funktionerna skapade i api.js
 
 export default async function Projects() {
   const allProjects = await getAllProjects();
-
   const allCategories = await getCategoryItems();
+    //hämtar data från funktionerna skapade i api
 
   return (
     <>
@@ -25,6 +26,7 @@ export default async function Projects() {
             >
               Filtrera Projekten
             </a>
+            {/* mappar innehållet i allCategories och använder dess slug som href, generateStaticParams används för att via slugs skapa koppling för vilket projekt som ska visas*/}
             <ul className="dropdown-menu">
               {allCategories.map((item, index) => (
                 <li key={index}>
@@ -36,7 +38,8 @@ export default async function Projects() {
               <li>
                 <hr className="dropdown-divider" />
               </li>
-              <li>
+              <li>.
+                  {/* Länk för att visa alla projekt utan filtrering */}
                 <a className="dropdown-item" href={`/projects`}>
                   Alla projekt
                 </a>
@@ -45,6 +48,7 @@ export default async function Projects() {
           </div>
           <hr className="solid" />
           <div>
+            {/* mappar igenom alla projekt och och lägger dessa i ett card för varje projekt */}
             {allProjects.map((project) => (
               <div className="card mb-3" key={project.slug}>
                 <div className="row g-0">
@@ -75,6 +79,7 @@ export default async function Projects() {
                             )}
                           </small>
                         </p>
+                            {/* Länkar vidare till en enskild projektsida */}
                         <Link
                           className="btn linkedin-btn"
                           href={`/project/${project.slug}`}
@@ -85,6 +90,7 @@ export default async function Projects() {
                     </div>
                   </div>
                   <div className="col-md-4 d-flex align-items-center">
+                     {/* Visar projektets bild, med hårdkodad text om description saknas */}
                     <Image
                       src={project.projectImage.url}
                       className="mx-auto rounded"

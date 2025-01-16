@@ -5,13 +5,15 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+//Aktuella importer, bland annat funktionerna skapade i api.js
 
 export default async function Contact() {
   const contactItem = await getContactItems();
-  console.log("contactItem:", contactItem[0]);
+  //hämtar data via funktionen getContactItems
 
   if (!contactItem) {
     notFound();
+    //om det inte inte finns data att visas 404()
   }
   return (
     <>
@@ -32,6 +34,7 @@ export default async function Contact() {
             </div>
             <div id="text-contact">
               <h5>{contactItem[0].introText}</h5>
+                {/* går in i mainText som är en richtext/json och mappar sedan igenom den för att skriva ut all data. Hade kunnat hårdkodat ut det men då krävs det att koda om det så fort textens längd/antal paragrafer ändras = inte dynamiskt och fint */}
               {contactItem[0].mainText.json.content.map((item, index) => (
                 <p className="card-text" key={index}>
                   {item.content[0]?.value}
@@ -39,6 +42,8 @@ export default async function Contact() {
               ))}
               <ul className="contact">
                 <li>
+                {/* target="_blank"
+                // target _blank gör att länken öppnas i ett nytt fönster */}
                   <Link href={contactItem[0].externalLink} target="_blank">
                     <i className="fa-brands fa-linkedin fa-2x"></i>LinkedIn
                   </Link>
