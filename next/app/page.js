@@ -26,7 +26,7 @@ export default async function Home() {
             <p>{startpageItem[1].mainText.json.content[0].content[0].value}</p>
 
             <Link className="btn projekt-btn" href="/projects">
-              Projekt
+              Projekten
             </Link>
             <Link
               className="btn linkedin-btn"
