@@ -14,7 +14,7 @@ export default async function Projects() {
       <Navbar />
       <main>
         <div className="container-projekt-index">
-          <h2>Projekt</h2>
+          <h2>Samtliga projekt</h2>
           <div className="dropdown">
             <a
               className="btn dropdown-toggle"

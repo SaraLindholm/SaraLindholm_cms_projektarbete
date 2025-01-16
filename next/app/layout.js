@@ -8,7 +8,7 @@ import {
   Playfair_Display,
 } from "next/font/google";
 
-//TODO- få hamburgarmenyn at fungera
+
 import "./globals.css";
 
 const geistSans = Geist({

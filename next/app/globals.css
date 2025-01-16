@@ -217,7 +217,7 @@ a {
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 210px;
   width: 70%;
   height: fit-content; /* Behåll detta om du vill att innehållet ska styra höjden */
   border-radius: 5px;
@@ -305,7 +305,7 @@ a {
   text-align: center;
   z-index: 1;
 }
-
+/* Media Queries */
 @media (max-width: 499px) {
   /* .card-om-mig-text{
     width:60%
@@ -318,9 +318,17 @@ a {
     margin: 0 auto;
     gap: 10px;
   }
+
+  .image-contact img {
+    padding: 10px;
+    /* margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px; */
+    max-width: 80%; /* Gör att bilden inte blir större än sektionen */
+    height: auto; /* Behåller proportionerna */
+  }
 }
 
-/* Media Queries */
 /* TOO-fixa mediaqueries */
 
 @media (min-width: 500px) and (max-width: 767px) {
@@ -345,10 +353,10 @@ a {
   }
   .image-contact img {
     padding: 10px;
-    margin-left: 20px;
+    /* margin-left: 20px;
     margin-top: 20px;
-    margin-bottom: 10px;
-    max-width: 50%; /* Gör att bilden inte blir större än sektionen */
+    margin-bottom: 10px; */
+    max-width: 80%; /* Gör att bilden inte blir större än sektionen */
     height: auto; /* Behåller proportionerna */
     border: 15px solid #eb9c5c; /* Inre ram */
     outline: 5px solid #e27a4a; /* Yttre ram */

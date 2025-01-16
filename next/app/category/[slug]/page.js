@@ -7,6 +7,7 @@ import Image from "next/image";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Link from "next/link";
+
 export async function generateStaticParams() {
   const allProjects = await getAllProjects();
   return allProjects.map((project) => ({
@@ -15,15 +16,14 @@ export async function generateStaticParams() {
 }
 
 export default async function filteredProjects({ params }) {
-  const allProjects = await getAllProjects();
-  console.log("Fetching project with slug:", params.slug);
+  // const allProjects = await getAllProjects();
+  // console.log("Fetching project with slug:", params.slug);
 
   const query = await getFilteredProjects(params.slug);
   const filteredProject = query?.data?.categoryCollection?.items || [];
   console.log("filteredProject2:", query?.data?.categoryCollection);
 
   const allCategories = await getCategoryItems();
-  console.log("allCategories:", allCategories);
 
   return (
     <>

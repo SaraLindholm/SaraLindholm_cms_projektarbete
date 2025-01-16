@@ -26,8 +26,8 @@ export default async function Contact() {
                 alt={
                   contactItem[0].imageStartpage.description || "Bild på Sara"
                 }
-                width={500}
-                height={500}
+                width={800}
+                height={800}
               />
             </div>
             <div id="text-contact">
